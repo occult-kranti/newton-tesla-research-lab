@@ -1,0 +1,79 @@
+{
+  "verified_at": "2026-09-27T03:12:04.691591+00:00",
+  "repository": "https://github.com/occult-kranti/newton-tesla-research-lab",
+  "pages_url": "https://occult-kranti.github.io/newton-tesla-research-lab/",
+  "deployed_source_commit": "b9af45e5b3c20d69f28218603988baae11af1f56",
+  "workflow": {
+    "id": 36290611947,
+    "url": "https://github.com/occult-kranti/newton-tesla-research-lab/actions/runs/36290611947",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "public_manifest": {
+    "url": "https://occult-kranti.github.io/newton-tesla-research-lab/build-manifest.json",
+    "source_commit_matches": true,
+    "dirty_worktree": false,
+    "app_sha256": "0a4b26e9aac63d4874af4ac36a701df832b5b14538d19ab990641ee6cc629d09",
+    "app_sha256_matches_local": true
+  },
+  "local_validation": {
+    "producer_checks": 39,
+    "independent_checks": 55,
+    "byte_identical_numerical_artifacts": 32,
+    "producer_contract_dependency_bindings": 45,
+    "release_bound_artifacts": 63,
+    "rounds": 3,
+    "loops": 6,
+    "selected_sources": 25,
+    "hypotheses": 15,
+    "interface_check_groups": 11
+  },
+  "browser": {
+    "viewport": {
+      "width": 1363,
+      "height": 936,
+      "document_width": 1348
+    },
+    "site_errors": [],
+    "observations": [
+      "Visible admission count: 3/3 rounds and 6/6 loops.",
+      "Frequency ratio 1.2 and load 30 ohm produce 0.583 voltage gain and source/load/winding powers 15.677/5.666/10.011 mW.",
+      "Zero injected drive and 3 mrad phase skew show 4.813 mV apparent drive; disabling supplied bounds withholds a bound-based conclusion.",
+      "Both reset buttons restore input fields and recompute 1.395 gain, 84.559 mW source power and 5.000 mV reconstructed receiver drive.",
+      "Gravity filter shows 5 proposals; All areas restores 15.",
+      "Deterministic coordinate 3D tab displays the generated geometry.",
+      "No desktop horizontal overflow.",
+      "No site-origin console errors; browser-extension metadata errors excluded."
+    ],
+    "limits": [
+      "No rendered mobile-device verification; browser API exposes no viewport resize.",
+      "No screen-reader speech test.",
+      "No physical apparatus built or measured."
+    ],
+    "repairs": [
+      {
+        "commit": "f5dca3009451423700ab9943868cc2190f70c37b",
+        "reason": "Native reset event ordering left old derived results visible; next-task update fixes both calculators."
+      },
+      {
+        "commit": "b9af45e5b3c20d69f28218603988baae11af1f56",
+        "reason": "Pages app.js has max-age=600 caching. Versioned script URL loaded corrected code in the existing browser; live reset check then passed."
+      }
+    ],
+    "screenshots": [
+      {
+        "path": "docs/verification/desktop-setup.jpg",
+        "release": "b7b8ca5ff8e2612b2cf4f051a27a7cfbcad24b6e",
+        "purpose": "Initial scientific apparatus view; geometry unchanged by calculator fixes.",
+        "sha256": "d73bed4b6d1415e099e1a50afdf15e999fef30f59b7d83fc929ecffccedb37bc"
+      },
+      {
+        "path": "docs/verification/desktop-final.jpg",
+        "release": "b9af45e5b3c20d69f28218603988baae11af1f56",
+        "purpose": "Final release scientific apparatus view.",
+        "sha256": "13277089ce8f95901e477725cd4b199657a2938aea0872d4bbd3f96b8f10ce88"
+      }
+    ]
+  },
+  "publication_note": "This deployment evidence is committed after the deployed source with skip-ci. It records the live source commit; it is not a new scientific round or a claim that the evidence file itself was in that deployed build."
+}

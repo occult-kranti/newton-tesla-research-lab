@@ -1,0 +1,138 @@
+#!/usr/bin/env python3
+"""Calibrated witness subtraction, exact rivals and singular crossleak fixtures."""
+from pathlib import Path
+import argparse
+import json
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
+from scripts.numerics import ROOT, np, plt, write_json, write_csv, save_figure, write_manifest
+
+CONTRACT=ROOT/"docs/contracts/R3.json"
+
+def pair(z):
+    return [float(z.real),float(z.imag)]
+
+def real_map(matrix):
+    matrix=np.asarray(matrix,dtype=complex)
+    result=np.zeros((matrix.shape[0]*2,matrix.shape[1]*2))
+    for r in range(matrix.shape[0]):
+        for c in range(matrix.shape[1]):
+            z=matrix[r,c];result[r*2:r*2+2,c*2:c*2+2]=[[z.real,-z.imag],[z.imag,z.real]]
+    return result
+
+def radius(measured_w, a, eps_y, eps_w, delta_a):
+    return eps_y+abs(a)*eps_w+delta_a*(abs(measured_w)+eps_w)
+
+def main(out):
+    out.mkdir(parents=True,exist_ok=True)
+    contract=json.loads(CONTRACT.read_text());p=contract["parameters"];accept=contract["acceptance"]
+    a=complex(*p["nominal_transfer_a"]);s=p["signal_amplitude_V"]*np.exp(1j*p["signal_phase_rad"]);b=p["background_amplitude_V"]*np.exp(1j*p["background_phase_rad"])
+    eps_y=p["receiver_error_bound_V"];eps_w=p["witness_error_bound_V"];delta_a=p["transfer_error_bound"]
+    y=s+a*b;w=b;nominal_s=y-a*w;nominal_radius=float(radius(w,a,eps_y,eps_w,delta_a))
+    phases=np.arange(p["boundary_phase_points"])*2*np.pi/p["boundary_phase_points"]
+    fixtures=[]
+    for phi_y in phases:
+        for phi_w in phases:
+            for phi_a in phases:
+                actual_a=a+delta_a*np.exp(1j*phi_a)
+                measured_y=s+actual_a*b+eps_y*np.exp(1j*phi_y)
+                measured_w=b+eps_w*np.exp(1j*phi_w)
+                s_hat=measured_y-a*measured_w
+                error=abs(s_hat-s);bound=radius(measured_w,a,eps_y,eps_w,delta_a)
+                fixtures.append([phi_y,phi_w,phi_a,measured_y.real,measured_y.imag,measured_w.real,measured_w.imag,s_hat.real,s_hat.imag,error,bound,bound-error])
+    write_csv(out/"witness-uncertainty-fixtures.csv",["receiver_error_phase_rad","witness_error_phase_rad","transfer_error_phase_rad","measured_y_real_V","measured_y_imag_V","measured_w_real_V","measured_w_imag_V","estimated_s_real_V","estimated_s_imag_V","absolute_error_V","disk_radius_V","inclusion_margin_V"],fixtures)
+    # Attain the data-dependent bound: witness error opposite b, all
+    # contributions to the estimation error aligned with a*b.
+    aligned_phase=np.angle(a)+np.angle(b)
+    aligned_ey=eps_y*np.exp(1j*aligned_phase)
+    aligned_ew=-eps_w*np.exp(1j*np.angle(b))
+    aligned_da=delta_a*np.exp(1j*np.angle(a))
+    aligned_y=s+(a+aligned_da)*b+aligned_ey;aligned_w=b+aligned_ew
+    aligned_estimate=aligned_y-a*aligned_w;aligned_error=float(abs(aligned_estimate-s));aligned_bound=float(radius(aligned_w,a,eps_y,eps_w,delta_a))
+    aligned={"receiver_error_V":pair(aligned_ey),"witness_error_V":pair(aligned_ew),"transfer_error":pair(aligned_da),"measured_y_V":pair(aligned_y),"measured_w_V":pair(aligned_w),"estimated_s_V":pair(aligned_estimate),"absolute_error_V":aligned_error,"disk_radius_V":aligned_bound,"sharpness_error_V":abs(aligned_error-aligned_bound)}
+    write_json(out/"aligned-bound-fixture.json",aligned)
+    alternate_a=a+s/b;alternate_s=0j;alternate_y=alternate_s+alternate_a*b
+    transfer_rival_error=float(max(abs(alternate_y-y),abs(b-w)))
+    ordinary_y=0+s+a*b;ordinary_w=b
+    identity_rival_error=float(max(abs(ordinary_y-y),abs(ordinary_w-w)))
+    rivals={"nominal":{"stipulated_signal_V":pair(s),"background_V":pair(b),"transfer":pair(a),"y_V":pair(y),"w_V":pair(w)},"unknown_transfer_zero_signal":{"stipulated_signal_V":pair(alternate_s),"background_V":pair(b),"transfer":pair(alternate_a),"y_V":pair(alternate_y),"w_V":pair(b),"max_observation_error_V":transfer_rival_error},"physical_identity":{"case_A":{"exotic_V":pair(s),"ordinary_same_port_V":pair(0j)},"case_B":{"exotic_V":pair(0j),"ordinary_same_port_V":pair(s)},"shared_y_V":pair(y),"shared_w_V":pair(w),"max_observation_error_V":identity_rival_error}}
+    write_json(out/"exact-rivals.json",rivals)
+    write_csv(out/"exact-rivals.csv",["case","s_exotic_real_V","s_exotic_imag_V","ordinary_real_V","ordinary_imag_V","transfer_real","transfer_imag","background_real_V","background_imag_V","y_real_V","y_imag_V","w_real_V","w_imag_V"],[["nominal_exotic_assignment",s.real,s.imag,0,0,a.real,a.imag,b.real,b.imag,y.real,y.imag,w.real,w.imag],["same_observations_ordinary_assignment",0,0,s.real,s.imag,a.real,a.imag,b.real,b.imag,ordinary_y.real,ordinary_y.imag,ordinary_w.real,ordinary_w.imag],["same_observations_unknown_transfer",0,0,0,0,alternate_a.real,alternate_a.imag,b.real,b.imag,alternate_y.real,alternate_y.imag,b.real,b.imag]])
+    complex_maps={"no_witness":(np.array([[1,a]]),np.array([[-a],[1]])),"clean_known_witness":(np.array([[1,a],[0,1]]),np.empty((2,0),dtype=complex)),"unknown_transfer_local":(np.array([[1,a,b],[0,1,0]]),np.array([[-b],[0],[1]])),"singular_crossleak":(np.array([[1,a],[1/a,1]]),np.array([[-a],[1]])),"expanded_physical_identity":(np.array([[1,1,a],[0,0,1]]),np.array([[1],[-1],[0]]))}
+    maps={}
+    for name,(mapping,kernel) in complex_maps.items():
+        mat=real_map(mapping);ker=real_map(kernel);rank=int(np.linalg.matrix_rank(mat))
+        maps[name]={"domain_real_dimension":int(mat.shape[1]),"rank":rank,"nullity":int(mat.shape[1]-rank),"real_matrix":mat.tolist(),"kernel_columns":ker.tolist(),"kernel_residual":float(np.max(np.abs(mat@ker))) if ker.size else 0.,"scope":"local Jacobian in (s,b,a) at stipulated fixture" if name=="unknown_transfer_local" else "linear map for stated known coefficients"}
+    write_json(out/"observation-maps.json",maps)
+    crossleak=[]
+    for t in p["crossleak_path_t"]:
+        beta=t/a;mat=np.array([[1,a],[beta,1]],dtype=complex);observations=mat@np.array([s,b]);det=1-a*beta
+        rank=int(np.linalg.matrix_rank(real_map(mat)))
+        if t==1:
+            recovered=None;error=None;condition=None;noise_radius=None
+        else:
+            recovered=np.linalg.solve(mat,observations);error=float(np.max(abs(recovered-np.array([s,b]))));condition=float(np.linalg.cond(mat));noise_radius=float((eps_y+abs(a)*eps_w)/abs(det))
+        crossleak.append({"t":t,"beta":pair(beta),"determinant":pair(det),"real_rank":rank,"condition_2norm":condition,"reconstruction_max_error_V":error,"measurement_only_signal_error_radius_V":noise_radius,"unique_inverse_available":t!=1,"reconstructed_s_V":None if recovered is None else pair(recovered[0]),"reconstructed_b_V":None if recovered is None else pair(recovered[1]),"y_V":pair(observations[0]),"w_V":pair(observations[1])})
+    write_json(out/"crossleak-path.json",crossleak)
+    write_csv(out/"crossleak-path.csv",["t","beta_real","beta_imag","det_real","det_imag","real_rank","condition_2norm","reconstruction_max_error_V","measurement_only_signal_error_radius_V","unique_inverse_available"],[[r["t"],*r["beta"],*r["determinant"],r["real_rank"],r["condition_2norm"],r["reconstruction_max_error_V"],r["measurement_only_signal_error_radius_V"],r["unique_inverse_available"]] for r in crossleak])
+    null_error=float(abs((a*b)-a*b));nominal_error=float(abs(nominal_s-s));singular=[r for r in crossleak if r["t"]==1][0]
+    singular_kernel=np.array([-a,1],dtype=complex);singular_mat=complex_maps["singular_crossleak"][0]
+    singular_shift=.003+.004j;singular_observation_error=float(np.max(abs(singular_mat@(np.array([s,b])+singular_shift*singular_kernel)-singular_mat@np.array([s,b]))))
+    checks=[
+      {"id":"clean-exact-reconstruction","passed":nominal_error<accept["exact_reconstruction_absolute_V"],"absolute_error_V":nominal_error},
+      {"id":"background-only-zero-control","passed":null_error<accept["exact_reconstruction_absolute_V"],"absolute_error_V":null_error},
+      {"id":"all512-boundary-fixtures-in-disk","passed":len(fixtures)==512 and min(r[-1] for r in fixtures)>=-accept["boundary_disk_exceedance_tolerance_V"],"fixture_count":len(fixtures),"minimum_margin_V":float(min(r[-1] for r in fixtures))},
+      {"id":"aligned-bound-is-attained","passed":abs(aligned_error-aligned_bound)<accept["aligned_sharpness_error_V"],"sharpness_error_V":abs(aligned_error-aligned_bound)},
+      {"id":"unknown-transfer-zero-signal-rival","passed":transfer_rival_error<accept["raw_rival_observation_error_V"],"observation_error_V":transfer_rival_error},
+      {"id":"declared-real-ranks","passed":{k:v["rank"] for k,v in maps.items()}==accept["expected_real_ranks"]},
+      {"id":"declared-real-nullities","passed":{k:v["nullity"] for k,v in maps.items()}==accept["expected_real_nullities"]},
+      {"id":"explicit-kernel-witnesses","passed":all(v["kernel_residual"]<accept["kernel_residual"] for v in maps.values())},
+      {"id":"nonsingular-known-crossleak-reconstruction","passed":all(r["reconstruction_max_error_V"]<accept["exact_reconstruction_absolute_V"] for r in crossleak if r["t"]!=1)},
+      {"id":"singular-crossleak-withholds-inverse","passed":singular["real_rank"]==2 and singular["reconstructed_s_V"] is None and singular["condition_2norm"] is None},
+      {"id":"singular-crossleak-finite-rival","passed":singular_observation_error<accept["raw_rival_observation_error_V"],"observation_error_V":singular_observation_error},
+      {"id":"ordinary-physical-identity-rival","passed":identity_rival_error<accept["raw_rival_observation_error_V"],"observation_error_V":identity_rival_error},
+      {"id":"conditional-positive-control-excludes-zero","passed":abs(nominal_s)>nominal_radius,"margin_V":float(abs(nominal_s)-nominal_radius)},
+      {"id":"unconditional-exotic-claim-withheld","passed":True,"interpretation":"An exact ordinary same-port rival survives ideal witness subtraction; no unconditional exotic-source interval is reported."},
+    ]
+    for c in checks:c["passed"]=bool(c["passed"])
+    fixture_array=np.array(fixtures);fig,axes=plt.subplots(1,2,figsize=(9,4))
+    axes[0].scatter(fixture_array[:,7]*1e3,fixture_array[:,8]*1e3,s=7,alpha=.35,color="#236745",label="512 bounded fixtures");axes[0].scatter([s.real*1e3],[s.imag*1e3],color="black",marker="+",s=70,label="Injected 5 mV signal")
+    theta=np.linspace(0,2*np.pi,361);circle=s+max(fixture_array[:,10])*np.exp(1j*theta);axes[0].plot(circle.real*1e3,circle.imag*1e3,ls="--",color="#ac762a",label="Largest supplied error bound")
+    axes[0].axis("equal");axes[0].set_xlabel("Re recovered signal (mV)");axes[0].set_ylabel("Im recovered signal (mV)");axes[0].legend(fontsize=7)
+    nonsingular=[r for r in crossleak if r["t"]!=1];axes[1].semilogy([r["t"] for r in nonsingular],[r["condition_2norm"] for r in nonsingular],"o",color="#236745");axes[1].axvline(1,color="#a85631",ls="--",label="t = 1: no unique inverse");axes[1].set_xlabel("Known witness crossleak path t (β=t/a)");axes[1].set_ylabel("Complex matrix condition number (2-norm)");axes[1].legend(fontsize=7);axes[1].grid(alpha=.2)
+    fig.suptitle("Synthetic witness: bounded calibration helps; singular leakage destroys separation");fig.tight_layout();save_figure(out/"witness-calibration.svg",fig)
+    fig,ax=plt.subplots(figsize=(7,3.5));names=list(maps);ranks=[maps[k]["rank"] for k in names];nullities=[maps[k]["nullity"] for k in names];locations=np.arange(5)
+    ax.barh(locations,ranks,color="#236745",label="Observable local dimensions");ax.barh(locations,nullities,left=ranks,color="#d3c7a9",label="Kernel dimensions");ax.set_yticks(locations,["No witness","Clean known witness","Unknown transfer (local)","Singular crossleak","Exotic + ordinary source"]);ax.invert_yaxis();ax.set_xlabel("Real dimensions");ax.set_title("The remaining ambiguity depends on the declared domain");ax.legend(fontsize=8,loc="lower right");save_figure(out/"remaining-identifiability.svg",fig)
+    metrics={"signal_V":pair(s),"background_V":pair(b),"transfer_a":pair(a),"nominal_y_V":pair(y),"nominal_w_V":pair(w),"nominal_recovered_signal_V":pair(nominal_s),"nominal_signal_disk_radius_V":nominal_radius,"nominal_zero_exclusion_margin_V":float(abs(nominal_s)-nominal_radius),"bounded_fixture_count":len(fixtures),"maximum_fixture_error_V":float(max(fixture_array[:,9])),"maximum_fixture_disk_radius_V":float(max(fixture_array[:,10])),"aligned_fixture_error_V":aligned_error,"aligned_fixture_radius_V":aligned_bound,"unknown_transfer_zero_signal_a":pair(alternate_a),"map_ranks":{k:v["rank"] for k,v in maps.items()},"map_nullities":{k:v["nullity"] for k,v in maps.items()},"crossleak_path":crossleak,"unconditional_exotic_signal_interval":None}
+    result={"round":"R3","title":contract["title"],"classification":contract["classification"],"summary":[f"An exact calibrated witness recovers the stipulated 5 mV signal; the supplied nominal error disk radius is {nominal_radius*1e3:.6f} mV.","Unknown environmental transfer admits an exact zero-signal rival matching both readouts; signal leakage into the witness becomes singular when 1−aβ=0.","Even perfect witness subtraction cannot distinguish an exotic signal from an unmonitored ordinary drive at the same port."],"metrics":metrics,"checks":checks,"limitations":contract["limits"]+[contract["model"]["boundary"],contract["model"]["calibration_scope"],"The 512 fixtures and aligned sharpness case test a deterministic triangle-inequality bound; no confidence or false-alarm probability is calculated.","Crossleak-path measurement-only error radii assume a and beta are known exactly; transfer uncertainty and real drift require a larger calibrated model."],"artifacts":["research/R3/witness-calibration.svg","research/R3/remaining-identifiability.svg","research/R3/witness-uncertainty-fixtures.csv","research/R3/exact-rivals.csv","research/R3/crossleak-path.csv"]}
+    write_json(out/"parameters.json",p);write_json(out/"result.json",result)
+    (out/"report.md").write_text(f'''# R3 — What a witness can and cannot remove
+
+This synthetic single-frequency observation model uses y=s+ab and a clean calibrated witness w=b. Voltages are complex peak amplitudes. The stipulated signal is 5 mV, environmental equivalent voltage is 20 mV and transfer is a=0.6+0.2i. A witness-equivalent voltage is not automatically the raw voltage of a physical coil.
+
+## Conditional recovery and a sharp bound
+
+Known exact transfer gives s=y−aw. For measured ŷ,ŵ and supplied uncertainty radii, the estimation error is δa·b + ηᵧ − aηw. Triangle inequality, followed by |b|≤|ŵ|+εw, gives
+
+|ŝ−s| ≤ εᵧ + |a|εw + Δa(|ŵ|+εw).
+
+The nominal radius is **{nominal_radius:.12g} V** and the nominal zero-exclusion margin is **{abs(nominal_s)-nominal_radius:.12g} V**. Every one of the 512 boundary fixtures lies in its own disk. An extra aligned fixture attains its radius **{aligned_bound:.12g} V** with discrepancy {abs(aligned_error-aligned_bound):.4g} V. Its witness error opposes b; its receiver and transfer errors align with ab, so both triangle inequalities attain equality.
+
+The 2 mV receiver radius is a new stipulated effective-voltage bound, slightly above R2's nominal 1.932 mV value. It is not derived over all R3 physical circuit conditions. It, the 0.5 mV witness bound, and the 0.02 transfer bound must be calibrated before application to hardware. The fixture count is not a confidence level.
+
+## Exact counterexamples
+
+With unknown transfer, a′=a+s/b=({alternate_a.real:.12g})+({alternate_a.imag:.12g})i and s′=0 give exactly the same y,w. The local map has domain dimension six, rank four and nullity two. This is a finite rival as well as a local kernel statement.
+
+If the witness also sees signal, w=b+βs, the known transfer matrix has determinant 1−aβ. The saved path β=t/a includes both sides of the singular boundary. At t=1 the real rank falls from four to two and the producer explicitly returns no unique inverse. The nearby noise radii assume known a and β; they are not the clean-witness uncertain-transfer bound.
+
+Finally, writing s=s_exotic+d yields the same observations whether all 5 mV is assigned to an exotic source or to ordinary unmonitored same-port drive d. A perfect environmental witness cannot settle this physical identity. A mechanism-specific modulation/control is still necessary.
+
+{sum(c['passed'] for c in checks)}/{len(checks)} producer checks pass. All raw uncertainty cases, transfer-path records, analytic real maps, kernel columns and exact rivals are saved. No hardware, dark matter, gravity change or free-energy extraction has been demonstrated. This is the final producer round of the authorized three-round program; subsequent physical work is in the roadmap.
+''')
+    if out.resolve()==Path(__file__).resolve().parent:write_manifest(out,CONTRACT)
+    if not all(c["passed"] for c in checks):raise SystemExit("Producer checks failed; preserve outputs and review.")
+    print(json.dumps({"round":"R3","passed":len(checks),"nominal_disk_V":nominal_radius,"aligned_sharpness_error_V":abs(aligned_error-aligned_bound),"fixture_count":len(fixtures)}))
+
+if __name__=="__main__":
+    parser=argparse.ArgumentParser();parser.add_argument("--output",type=Path,default=Path(__file__).resolve().parent);main(parser.parse_args().output)

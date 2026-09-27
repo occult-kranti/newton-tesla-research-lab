@@ -1,0 +1,33 @@
+{
+  "C1_F": 1e-05,
+  "C2_F": 2.5e-06,
+  "L1_H": 0.01,
+  "L2_H": 0.04,
+  "M_H": 0.003,
+  "R1_ohm": 2.0,
+  "R2_ohm": 3.0,
+  "frequency_points": 701,
+  "frequency_ratio_domain": [
+    0.3,
+    1.7
+  ],
+  "k": 0.15,
+  "load_log_domain_ohm": [
+    1.0,
+    1000.0
+  ],
+  "load_points": 401,
+  "loads_ohm": [
+    1.0,
+    5.0,
+    20.0,
+    100.0
+  ],
+  "nominal_load_ohm": 20.0,
+  "source_peak_V": 1.0,
+  "transient_end_s": 0.25,
+  "transient_samples": [
+    5001,
+    10001
+  ]
+}

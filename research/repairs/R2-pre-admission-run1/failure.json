@@ -1,0 +1,8 @@
+{
+  "stage": "producer serialization, before any R2 scientific review",
+  "observedError": "TypeError: Object of type bool is not JSON serializable",
+  "cause": "NumPy comparison scalars in check.passed were numpy.bool_, not builtin bool.",
+  "repair": "Convert each already-computed check.passed to builtin bool before serializing; do not alter formulas, frozen parameters, acceptance thresholds or shared helpers.",
+  "retainedEvidence": "run.py is the original failed producer script. Computation reached result serialization; no result or manifest was admitted.",
+  "classification": "Programming repair, not a physical-model failure or an additional panel round"
+}

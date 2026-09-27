@@ -1,0 +1,27 @@
+{
+  "generatorPath": "scripts/render_setups.py",
+  "generatorSHA256": "2dc65c418a1527e20781dc96e27ee3448dd0ab2e1ad05bc20989f165822f9088",
+  "files": {
+    "coupled-coils-plan.svg": "d9f2b7ad7573f89d51cfde4accacbbc0427a6527d095bc081a05707213418999",
+    "coupled-coils-elevation.svg": "0bbc89ee1e73abf615bb0863f968a6925dd12f36ac05e7e8649fd17d9dc673d5",
+    "coupled-coils-circuit.svg": "0d684c8ce4710a2cc1508f148db9f44bc9c05164353d2c34a10d9d543fe43cba",
+    "coupled-coils-3d.png": "6cf5c0513a903d7f4d836b304df5171880a9d996c4f827ce66e1ea257d6cde7c",
+    "coherent-readout.svg": "768652ef32bbfae9d7de14311a67dee894d8f5693a5bd2c42058bf3230a949d3",
+    "environmental-witness-plan.svg": "09e927d051012454856b181ec879bc53323b15402e74a2ddb20595065a6e7aaf",
+    "environmental-witness-3d.png": "3b29a88085813c95e60f6dc13f33c1ec91c547e4cbd395efd2bcfbd59a8532cf",
+    "environmental-witness-map.svg": "85495452c3850e800e38e4c7f9b3c4fc1ea63ea64e3f99d25de4ba0ae69ef638",
+    "newton-prism-rays.svg": "abed26035112e24f847afcc956e47e8ae6b18515d2edd1eabdcd82871c51a0ae",
+    "geometry.json": "441c6726add1895745d9467615246ed86d11b3ac436044433e6bd704afb6fd09"
+  },
+  "checks": {
+    "coilCenterSeparation_m": 0.08,
+    "coilClearAxialGap_m": 0.03,
+    "k_from_parameters": 0.15,
+    "inductanceMatrixEigenvalues_H": [
+      0.009702941459221646,
+      0.040297058540778356
+    ],
+    "prismMaxSnellResidual": 2.220446049250313e-16
+  },
+  "limits": "Deterministic drawing geometry and stipulated-ray calculation, not field simulation, material calibration or completed apparatus."
+}

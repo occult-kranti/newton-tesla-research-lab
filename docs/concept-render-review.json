@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-27",
+  "status": "rejected_as_scientific_setup",
+  "asset": "assets/concepts/coupled-coils-rejected.png",
+  "reference": "assets/setups/coupled-coils-3d.png",
+  "prompt": "Create a scientifically restrained, realistic 3D apparatus reconstruction based on the supplied deterministic geometry image. It depicts a PROPOSED, UNBUILT low-voltage coupled-coil experiment, not an operating device or reported result. Keep the experimental structure: a 1.2m x 0.72m plain tabletop; isolated low-voltage generator enclosure on the left; two compact copper winding packs on separate insulating stands sharing a nonconductive adjustable rail near center; their horizontal cylindrical axes are coaxial, roughly 80mm center spacing, 50mm winding-pack length, 56mm outer diameter, leaving a 30mm face gap. Windings should look like many close turns, no claim about exact turn count. Two distinct closed electrical circuits with NO conductive bridge between primary and secondary. Primary loop has source, series resistor, capacitor and first coil. Secondary loop has second coil, capacitor, winding-loss representation and resistive load. Preserve red primary wiring and teal secondary wiring following the reference layout. A separate isolated multichannel acquisition enclosure on the right has blank dark display, thin clearly separate measurement leads, not inserted as a power source in the secondary loop. Electrical connection details are governed by the accompanying scientific schematic; don't invent ground connections between loops. Use a clean neutral laboratory bench, three-quarter overhead view, evenly lit, no people, sparks, arcs, energy halos, floating objects, mystical symbols, dramatic atmosphere or claimed measurements. No text, numbers, charts or labels within the image. Fill the frame with apparatus. Technical visualization emphasizing component placement and physical appearance, not a promotional hero image. Never make an instrument display appear to contain real readings.",
+  "findings": [
+    "Image generator introduced a metallic-looking rail despite the nonconductive support requirement.",
+    "Coil hubs/shaft-like parts and measurement/wiring details are not controlled by the coordinate model.",
+    "Some electrical return paths are ambiguous; this image is not an electrical schematic, measured apparatus or validated parts arrangement."
+  ],
+  "disposition": "Preserved only as a failed visualization attempt. The executable geometry, dimensioned plans and circuit schematic are authoritative; the rejected render is not the experiment UI's scientific plate."
+}

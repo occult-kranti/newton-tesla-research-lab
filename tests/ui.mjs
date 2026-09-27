@@ -1,0 +1,97 @@
+import assert from 'node:assert/strict';
+import { readFile, access } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { Window } from 'happy-dom';
+import { boot, coupledCircuit, sourceReadout, ledgerCounts } from '../app.js';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const json = async name => JSON.parse(await readFile(path.join(root, name), 'utf8'));
+const r1 = await json('docs/contracts/R1.json'), result1 = await json('research/R1/result.json');
+const r2 = await json('docs/contracts/R2.json'), result2 = await json('research/R2/result.json');
+const close = (actual, expected, tolerance, label) => assert.ok(Math.abs(actual - expected) <= tolerance, `${label}: ${actual} ≠ ${expected}`);
+const checks = [];
+const nominal = coupledCircuit(r1.parameters, 1, 20);
+for (const [field, key] of [['voltageGain', 'voltage_gain'], ['efficiency', 'efficiency'], ['sourcePower', 'source_power_W'], ['loadPower', 'load_power_W'], ['windingLoss', 'winding_loss_W']]) close(nominal[field], result1.metrics.nominal[key], 1e-12, field);
+assert.ok(nominal.averageStoredEnergy > 0);
+checks.push('Browser complex circuit agrees with frozen producer powers, gain and efficiency.');
+for (const ratio of [.3, 1, 1.7]) for (const load of [1, 20, 1000]) { const result = coupledCircuit(r1.parameters, ratio, load); assert.ok(result.efficiency >= 0 && result.efficiency <= 1 + 1e-12); close(result.residual, 0, 1e-12, 'passive power balance'); }
+const uncoupled = coupledCircuit({ ...r1.parameters, M_H: 0 }, 1, 20);
+assert.equal(uncoupled.loadPower, 0);
+const zero = coupledCircuit(r1.parameters, 1, 20, 0); assert.equal(zero.sourcePower, 0); assert.equal(zero.efficiency, null); assert.equal(zero.voltageGain, null);
+assert.throws(() => coupledCircuit({ ...r1.parameters, M_H: .02 }, 1, 20));
+assert.throws(() => coupledCircuit(r1.parameters, Number.NaN, 20));
+checks.push('Circuit boundary, zero-source, zero-coupling and passive-domain controls pass.');
+const readout = sourceReadout(r1.parameters);
+close(readout.magnitude, .005, 1e-12, 'receiver reconstruction');
+close(readout.errorRadius, result2.metrics.nominal_receiver_disk_radius_V, 1e-12, 'receiver error disk');
+assert.equal(readout.excludesZero, true);
+const phase = sourceReadout(r1.parameters, { receiverAmplitude: 0, phaseError: .01 });
+close(phase.magnitude, .016043841867494656, 1e-12, 'phase artifact');
+assert.equal(phase.calibrationWithinBudget, false); assert.equal(phase.excludesZero, null);
+assert.equal(sourceReadout(r1.parameters, { calibrationKnown: false }).excludesZero, null);
+assert.throws(() => sourceReadout(r1.parameters, { currentError: -1 }));
+checks.push('Readout matches R2 and withholds conclusions for unknown or exceeded calibration bounds.');
+const ledger = await json('research/decisions.json');
+assert.equal(ledgerCounts({ program: { rounds: 3, loops_per_round: 2 }, rounds: [] }).completedLoops, 0);
+assert.equal(ledgerCounts({ rounds: [{ verdict: 'pending', loops: [{ status: 'pending' }] }] }).completedLoops, 0);
+checks.push('Ledger counts derive recorded completed loops; pending entries never count.');
+
+const html = await readFile(path.join(root, 'index.html'), 'utf8');
+const fetchLocal = async url => { try { const data = await json(url); return { ok: true, json: async () => data }; } catch { return { ok: false, json: async () => ({}) }; } };
+const window = new Window({ url: 'http://localhost:8000/', settings: { disableJavaScriptEvaluation: true, disableJavaScriptFileLoading: true, disableCSSFileLoading: true } });
+globalThis.document = window.document;
+document.write(html);
+await boot(fetchLocal); await new Promise(resolve => setTimeout(resolve, 0));
+assert.equal(document.querySelectorAll('h1').length, 1);
+assert.equal(document.querySelectorAll('.ledger-round').length, 3);
+assert.match(document.getElementById('program-count').textContent, new RegExp(`${ledgerCounts(ledger).completedLoops}/6`));
+assert.equal(document.querySelectorAll('#coupled-calculator .output-cell').length, 6);
+assert.equal(document.querySelectorAll('#readout-calculator .output-cell').length, 3);
+for (const input of document.querySelectorAll('input')) assert.ok(input.id && document.querySelector(`label[for="${input.id}"]`) || input.closest('label'), `Input lacks a label: ${input.id}`);
+const hypotheses = await json('data/hypotheses.json');
+assert.equal(document.querySelectorAll('.hypothesis-row').length, hypotheses.hypotheses.length);
+document.querySelector('[data-category="gravity"]').click();
+assert.equal(document.querySelectorAll('.hypothesis-row').length, hypotheses.hypotheses.filter(item => item.category === 'gravity').length);
+const search = document.getElementById('hypothesis-search'); search.value = 'this-does-not-match-any-record-29817'; search.dispatchEvent(new window.Event('input', { bubbles: true }));
+assert.equal(document.querySelectorAll('.hypothesis-row').length, 0); assert.match(document.getElementById('hypothesis-list').textContent, /No proposals/);
+search.value = ''; search.dispatchEvent(new window.Event('input', { bubbles: true })); document.querySelector('[data-category="all"]').click();
+assert.equal(document.querySelectorAll('.hypothesis-row').length, hypotheses.hypotheses.length);
+checks.push('Loaded catalogue, accessible labels, category filters and empty-search recovery pass.');
+const ratio = document.getElementById('circuit-ratio'); ratio.value = '0'; ratio.dispatchEvent(new window.Event('input', { bubbles: true }));
+assert.equal(document.querySelectorAll('#circuit-results .output-cell').length, 0); assert.match(document.getElementById('circuit-results').textContent, /withheld/);
+ratio.value = '1'; ratio.dispatchEvent(new window.Event('input', { bubbles: true })); assert.equal(document.querySelectorAll('#circuit-results .output-cell').length, 6);
+const known = document.getElementById('readout-known'); known.checked = false; known.dispatchEvent(new window.Event('change', { bubbles: true }));
+assert.match(document.getElementById('readout-results').textContent, /Calibration unknown/);
+known.checked = true; known.dispatchEvent(new window.Event('change', { bubbles: true })); assert.match(document.getElementById('readout-results').textContent, /Zero lies outside/);
+checks.push('Interactive forms remove stale invalid results and correctly switch calibration admission.');
+const sources = await json('data/sources.json');
+assert.equal(document.querySelectorAll('.source-record').length, sources.sources.length);
+const sourceSearch = document.getElementById('source-search'); sourceSearch.value = sources.sources[0].id; sourceSearch.dispatchEvent(new window.Event('input', { bubbles: true })); assert.ok(document.querySelectorAll('.source-record').length >= 1);
+sourceSearch.value = ''; sourceSearch.dispatchEvent(new window.Event('input', { bubbles: true }));
+const sourceLink = document.querySelector('.reference-links a[href^="#source-"]');
+if (sourceLink) { sourceLink.click(); assert.equal(document.querySelector(sourceLink.getAttribute('href')).open, true); }
+assert.equal(document.querySelectorAll('a[href^="javascript:"]').length, 0);
+for (const external of document.querySelectorAll('a[target="_blank"]')) assert.match(external.rel, /noopener/);
+checks.push('Source search, referenced-source expansion and external-link protections pass.');
+try { await access(path.join(root, 'data/setups.json')); const setups = await json('data/setups.json'); assert.equal(document.querySelectorAll('.setup-sheet').length, setups.items.length); const tabs = document.querySelectorAll('.view-tabs'); for (const group of tabs) if (group.children.length > 1) { group.children[1].click(); assert.equal(group.children[1].getAttribute('aria-selected'), 'true'); assert.equal(group.children[0].getAttribute('aria-selected'), 'false'); } checks.push('Setup geometry views switch with accurate selected states.'); } catch (error) { if (error.code !== 'ENOENT') throw error; checks.push('Setup catalogue absent at test time; graceful missing-data state checked.'); }
+const linkedPaths = new Set();
+for (const node of document.querySelectorAll('a[href],link[href],script[src],img[src]')) {
+  const href = node.getAttribute('href') || node.getAttribute('src');
+  if (!href || /^https?:/.test(href) || href === '#') continue;
+  if (href.startsWith('#')) { assert.ok(document.getElementById(href.slice(1)), `Missing local fragment: ${href}`); continue; }
+  const local = href.split(/[?#]/)[0];
+  if (linkedPaths.has(local)) continue;
+  await access(path.join(root, local)); linkedPaths.add(local);
+}
+checks.push(`${linkedPaths.size} rendered local resource links and all local fragments resolve.`);
+await window.happyDOM.close();
+const failureWindow = new Window({ url: 'http://localhost:8000/', settings: { disableJavaScriptEvaluation: true, disableJavaScriptFileLoading: true, disableCSSFileLoading: true } });
+globalThis.document = failureWindow.document; document.write(html);
+await boot(async () => ({ ok: false }));
+assert.equal(document.getElementById('program-count').textContent, 'Research status unavailable');
+assert.match(document.getElementById('calculator-root').textContent, /No completion or result has been inferred/);
+checks.push('Failed data loading reports unavailable state instead of zero or invented success.');
+await failureWindow.happyDOM.close();
+delete globalThis.document;
+console.log(JSON.stringify({ status: 'passed', checks, limits: ['Happy DOM checks behavior and content, not browser layout, screen-reader speech or physical-model validity.'] }, null, 2));

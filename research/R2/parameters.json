@@ -1,0 +1,61 @@
+{
+  "contract_parameters": {
+    "current_error_bounds_A": [
+      1e-05,
+      1e-05
+    ],
+    "error_phase_points": 8,
+    "finite_rival_receiver_phase_rotation_rad": 1.5707963267948966,
+    "inherits": "R1 nominal inductances, capacitances, R1,R2,RL20ohm, omega0",
+    "injected_receiver_amplitude_V": 0.005,
+    "injected_receiver_phase_rad": 1.0471975511965976,
+    "mutual_inductance_error_bound_H": 3e-06,
+    "phase_error_grid_rad": [
+      0.0,
+      0.001,
+      0.003,
+      0.01
+    ],
+    "source1_complex_V": [
+      1.0,
+      0.0
+    ]
+  },
+  "inherited_circuit": {
+    "C1_F": 1e-05,
+    "C2_F": 2.5e-06,
+    "L1_H": 0.01,
+    "L2_H": 0.04,
+    "M_H": 0.003,
+    "R1_ohm": 2.0,
+    "R2_ohm": 3.0,
+    "frequency_points": 701,
+    "frequency_ratio_domain": [
+      0.3,
+      1.7
+    ],
+    "k": 0.15,
+    "load_log_domain_ohm": [
+      1.0,
+      1000.0
+    ],
+    "load_points": 401,
+    "loads_ohm": [
+      1.0,
+      5.0,
+      20.0,
+      100.0
+    ],
+    "nominal_load_ohm": 20.0,
+    "source_peak_V": 1.0,
+    "transient_end_s": 0.25,
+    "transient_samples": [
+      5001,
+      10001
+    ]
+  },
+  "receiver_kernel_delta_A": [
+    0.01,
+    0.02
+  ]
+}

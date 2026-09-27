@@ -1,0 +1,121 @@
+{
+  "schema": "newton-tesla-contract-v1",
+  "round": "R1",
+  "frozen_at": "2026-09-27T02:39:29.042889+00:00",
+  "title": "Coupled resonators: loading, voltage gain and the complete source budget",
+  "question": "Can passive magnetically coupled resonators produce receiver voltage above source voltage while all receiver power remains accounted for by the source and losses?",
+  "incoming_evidence": "Atlas V4 checked a single RLC circuit but not a coupled receiver or reflected source impedance. Tesla's coupled tuning is a source-grounded mechanism; it does not imply source-free energy.",
+  "historical_lenses": {
+    "Tesla": "Specify coupled coils, phase, receiver loading and return paths.",
+    "Newton": "Reconstruct a cause from observed receiver voltage only after testing alternative source/loading explanations."
+  },
+  "source_records": [
+    {
+      "id": "TESLA-1892",
+      "url": "https://www.gutenberg.org/files/13476/old/13476-h/13476-h.htm",
+      "section": "Coil construction; capacity/self-induction adjustment; losses",
+      "reading_status_at_freeze": "Skill reference selected passages; source agent will separately document direct project reading",
+      "relation": "inspires"
+    },
+    {
+      "id": "ATLAS-V4-R3",
+      "url": "https://github.com/occult-kranti/resonance-research-atlas/tree/main/research/sound-lab-v4",
+      "section": "R3 electrical energy budget",
+      "reading_status_at_freeze": "Recovered prior project result in session; no physical data",
+      "relation": "extends"
+    }
+  ],
+  "classification": "Modern reconstruction and synthetic circuit fixture, not Tesla's numerical apparatus, new law, measured efficiency or proof of energy extraction from vacuum.",
+  "state_and_units": {
+    "q": "charge vector, C",
+    "i": "current vector, A",
+    "L": "symmetric inductance matrix, H",
+    "C": "positive diagonal capacitances, F",
+    "R": "series resistances including receiver load, ohm",
+    "v": "source voltage, V",
+    "E": "stored electrical/magnetic energy, J",
+    "omega": "angular frequency, rad/s",
+    "P": "cycle-average real power, W"
+  },
+  "parameters": {
+    "L1_H": 0.01,
+    "L2_H": 0.04,
+    "C1_F": 1e-05,
+    "C2_F": 2.5e-06,
+    "k": 0.15,
+    "M_H": 0.003,
+    "R1_ohm": 2.0,
+    "R2_ohm": 3.0,
+    "source_peak_V": 1.0,
+    "loads_ohm": [
+      1.0,
+      5.0,
+      20.0,
+      100.0
+    ],
+    "nominal_load_ohm": 20.0,
+    "frequency_ratio_domain": [
+      0.3,
+      1.7
+    ],
+    "frequency_points": 701,
+    "load_log_domain_ohm": [
+      1.0,
+      1000.0
+    ],
+    "load_points": 401,
+    "transient_end_s": 0.25,
+    "transient_samples": [
+      5001,
+      10001
+    ]
+  },
+  "model": {
+    "phasor": "Z(omega) I = (V,0); Z11=R1+i(omega L1-1/(omega C1)); Z22=R2+RL+i(omega L2-1/(omega C2)); Z12=Z21=i omega M. Phasors are peak amplitudes; average power uses 1/2.",
+    "transient": "qdot=i; L idot=(Vpeak sin(omega0 t),0)-diag(R1,R2+RL)i-diag(1/C1,1/C2)q; q(0)=i(0)=0.",
+    "storage": "E=(i^T L i + q^T diag(1/C)q)/2, with |k|<1 ensuring positive definite L.",
+    "budget": "Psource=Re(V conjugate(I1))/2; Pload=RL |I2|^2/2; Ploss=(R1|I1|^2+R2|I2|^2)/2. Finite-time source work = load heat + winding heat + stored-energy change.",
+    "boundary": "Ideal sinusoidal source, lumped linear elements, no core hysteresis, stray capacitance, radiation, temperature dependence, source impedance beyond R1, sensor loading or environmental drive."
+  },
+  "observables": [
+    "Receiver load voltage gain |RL I2|/|V|",
+    "Receiver power/source real power for nonzero source power",
+    "Complex source and receiver currents",
+    "Reflected impedance and complete transient work balance"
+  ],
+  "rival_explanations": [
+    "Voltage gain is an impedance/phase effect supplied by source power",
+    "Apparent excess could arise by comparing peak voltage to real power or omitting source backaction"
+  ],
+  "controls": [
+    "Zero coupling gives zero receiver response",
+    "Zero source gives zero phasor response",
+    "Reverse M: receiver phase flips by pi; powers unchanged",
+    "At common uncoupled resonance, compare complex currents against closed-form reflected-resistance expression",
+    "Double both winding resistances and inspect efficiency reduction at fixed omega0 and nominal RL",
+    "Two transient sample spacings and tighter solver tolerance; perform external Simpson work quadrature, not only integrated work states"
+  ],
+  "acceptance": {
+    "phasor_relative_power_balance": 1e-10,
+    "resonance_closed_form_relative_error": 1e-10,
+    "control_absolute_tolerance": 1e-12,
+    "transient_relative_energy_residual": 0.0001,
+    "transient_grid_energy_difference_relative": 0.0001,
+    "all_sampled_efficiencies_in_0_1_with_tolerance": 1e-10,
+    "gain_witness": "Report at least one fixed parameter row with voltage gain >1 AND efficiency <=1; if absent report failure rather than tune beyond frozen domain."
+  },
+  "artifacts": [
+    "research/R1/result.json",
+    "research/R1/report.md",
+    "research/R1/manifest.json",
+    "CSV parameter/phasor and transient outputs",
+    "Deterministic SVG plots"
+  ],
+  "falsifier": "Any reproducible passive-model budget violation beyond declared tolerance rejects this implementation; voltage gain alone cannot support a free-energy claim.",
+  "limits": [
+    "Finite fixture and frequency/load grid are not a global optimization theorem",
+    "No apparatus has been built or measured",
+    "The lumped circuit has no gravity or cosmological degree of freedom"
+  ],
+  "next_round_rule": "Independent review selects the next question. Candidate only: whether phase-resolved two-channel readout can localize a drive once this forward model is checked. Do not execute before the R1B review."
+}

@@ -1,0 +1,473 @@
+{
+  "schemaVersion": 1,
+  "units": "metres unless explicitly mm",
+  "status": "proposed_unbuilt",
+  "table_m": [
+    1.2,
+    0.72,
+    0.018
+  ],
+  "adjustableNonconductiveRail_m": {
+    "position": [
+      0.33,
+      0.38,
+      0.001
+    ],
+    "size": [
+      0.26,
+      0.08,
+      0.006
+    ]
+  },
+  "coils": [
+    {
+      "id": "L1",
+      "center_m": [
+        0.42,
+        0.42,
+        0.105
+      ],
+      "radius_m": 0.028,
+      "length_m": 0.05,
+      "winding_pack_inner_radius_m": 0.016,
+      "turn_count": null
+    },
+    {
+      "id": "L2",
+      "center_m": [
+        0.5,
+        0.42,
+        0.105
+      ],
+      "radius_m": 0.028,
+      "length_m": 0.05,
+      "winding_pack_inner_radius_m": 0.016,
+      "turn_count": null
+    }
+  ],
+  "components": [
+    {
+      "id": "source",
+      "label": "Isolated source",
+      "position_m": [
+        0.07,
+        0.13,
+        0.015
+      ],
+      "size_m": [
+        0.13,
+        0.18,
+        0.065
+      ]
+    },
+    {
+      "id": "R1",
+      "label": "R\u2081",
+      "position_m": [
+        0.25,
+        0.151,
+        0.025
+      ],
+      "size_m": [
+        0.05,
+        0.028,
+        0.025
+      ]
+    },
+    {
+      "id": "C1",
+      "label": "C\u2081",
+      "position_m": [
+        0.335,
+        0.143,
+        0.025
+      ],
+      "size_m": [
+        0.035,
+        0.04,
+        0.04
+      ]
+    },
+    {
+      "id": "C2",
+      "label": "C\u2082",
+      "position_m": [
+        0.565,
+        0.143,
+        0.025
+      ],
+      "size_m": [
+        0.035,
+        0.04,
+        0.04
+      ]
+    },
+    {
+      "id": "R2",
+      "label": "R\u2082",
+      "position_m": [
+        0.755,
+        0.208,
+        0.025
+      ],
+      "size_m": [
+        0.055,
+        0.028,
+        0.025
+      ]
+    },
+    {
+      "id": "RL",
+      "label": "R\u1d38",
+      "position_m": [
+        0.845,
+        0.203,
+        0.025
+      ],
+      "size_m": [
+        0.07,
+        0.04,
+        0.035
+      ]
+    },
+    {
+      "id": "recorder",
+      "label": "Isolated readout",
+      "position_m": [
+        1.01,
+        0.35,
+        0.015
+      ],
+      "size_m": [
+        0.15,
+        0.26,
+        0.1
+      ]
+    }
+  ],
+  "conductiveWires": [
+    {
+      "loop": "primary",
+      "vertices_m": [
+        [
+          0.2,
+          0.165,
+          0.045
+        ],
+        [
+          0.25,
+          0.165,
+          0.0375
+        ]
+      ]
+    },
+    {
+      "loop": "primary",
+      "vertices_m": [
+        [
+          0.3,
+          0.165,
+          0.0375
+        ],
+        [
+          0.335,
+          0.163,
+          0.045
+        ]
+      ]
+    },
+    {
+      "loop": "primary",
+      "vertices_m": [
+        [
+          0.37,
+          0.163,
+          0.045
+        ],
+        [
+          0.395,
+          0.2,
+          0.035
+        ],
+        [
+          0.395,
+          0.448,
+          0.105
+        ]
+      ]
+    },
+    {
+      "loop": "primary",
+      "vertices_m": [
+        [
+          0.445,
+          0.448,
+          0.105
+        ],
+        [
+          0.455,
+          0.448,
+          0.035
+        ],
+        [
+          0.455,
+          0.64,
+          0.025
+        ],
+        [
+          0.2,
+          0.64,
+          0.025
+        ],
+        [
+          0.2,
+          0.275,
+          0.045
+        ]
+      ]
+    },
+    {
+      "loop": "secondary",
+      "vertices_m": [
+        [
+          0.6,
+          0.163,
+          0.045
+        ],
+        [
+          0.475,
+          0.2,
+          0.035
+        ],
+        [
+          0.475,
+          0.448,
+          0.105
+        ]
+      ]
+    },
+    {
+      "loop": "secondary",
+      "vertices_m": [
+        [
+          0.525,
+          0.448,
+          0.105
+        ],
+        [
+          0.72,
+          0.448,
+          0.035
+        ],
+        [
+          0.72,
+          0.222,
+          0.0375
+        ],
+        [
+          0.755,
+          0.222,
+          0.0375
+        ]
+      ]
+    },
+    {
+      "loop": "secondary",
+      "vertices_m": [
+        [
+          0.81,
+          0.222,
+          0.0375
+        ],
+        [
+          0.845,
+          0.223,
+          0.0425
+        ]
+      ]
+    },
+    {
+      "loop": "secondary",
+      "vertices_m": [
+        [
+          0.915,
+          0.223,
+          0.0425
+        ],
+        [
+          0.955,
+          0.223,
+          0.025
+        ],
+        [
+          0.955,
+          0.64,
+          0.025
+        ],
+        [
+          0.55,
+          0.64,
+          0.025
+        ],
+        [
+          0.55,
+          0.163,
+          0.045
+        ],
+        [
+          0.565,
+          0.163,
+          0.045
+        ]
+      ]
+    }
+  ],
+  "dotTerminals_m": [
+    [
+      0.395,
+      0.448,
+      0.105
+    ],
+    [
+      0.475,
+      0.448,
+      0.105
+    ]
+  ],
+  "modelParameters": {
+    "L1_H": 0.01,
+    "L2_H": 0.04,
+    "M_H": 0.003,
+    "k": 0.15,
+    "C1_F": 1e-05,
+    "C2_F": 2.5e-06,
+    "R1_ohm": 2,
+    "R2_ohm": 3,
+    "RL_ohm": 20,
+    "source_peak_V": 1,
+    "uncoupled_resonance_Hz": 503.2921210448704
+  },
+  "parameterGeometryRelation": "L,M,R,C are stipulated by R1 contract; adjustable calibration-coil geometry has unspecified turns/wire gauge and does not derive or validate them.",
+  "environmentalWitness": {
+    "pickup": {
+      "id": "W",
+      "center_m": [
+        0.84,
+        0.5,
+        0.105
+      ],
+      "radius_m": 0.028,
+      "length_m": 0.05,
+      "winding_pack_inner_radius_m": 0.016,
+      "turn_count": null,
+      "role": "proposed environmental pickup; raw voltage requires independent complex calibration to w; not assumed blind to signal"
+    },
+    "differentialLeads_m": [
+      [
+        [
+          0.815,
+          0.528,
+          0.105
+        ],
+        [
+          0.815,
+          0.57,
+          0.04
+        ],
+        [
+          1.01,
+          0.57,
+          0.045
+        ]
+      ],
+      [
+        [
+          0.865,
+          0.528,
+          0.105
+        ],
+        [
+          0.865,
+          0.585,
+          0.04
+        ],
+        [
+          1.01,
+          0.585,
+          0.045
+        ]
+      ]
+    ],
+    "contractPath": "docs/contracts/R3.json",
+    "limitation": "Proposed raw pickup voltage must be mapped to witness-equivalent w by independent complex calibration; geometric position does not establish a or beta."
+  },
+  "prism": {
+    "units": "mm",
+    "side_mm": 120,
+    "apex_angle_deg": 60,
+    "incident_angle_deg": 20,
+    "screen_x_mm": 450,
+    "rayCalculations": [
+      {
+        "wavelength_nm": 650,
+        "stipulated_refractive_index": 1.51,
+        "entry_mm": [
+          34.64101615137755,
+          60.0
+        ],
+        "exit_mm": [
+          85.11226745633827,
+          60.42732532649628
+        ],
+        "screen_mm": [
+          450.0,
+          -58.588492172584075
+        ],
+        "exit_angle_deg": -18.06482731407568,
+        "color": "#b94437",
+        "entry_snell_residual": 2.220446049250313e-16,
+        "exit_snell_residual": 1.1102230246251565e-16
+      },
+      {
+        "wavelength_nm": 550,
+        "stipulated_refractive_index": 1.52,
+        "entry_mm": [
+          34.64101615137755,
+          60.0
+        ],
+        "exit_mm": [
+          85.22470322646923,
+          60.23258086004134
+        ],
+        "screen_mm": [
+          450.0,
+          -64.89119908588516
+        ],
+        "exit_angle_deg": -18.932790827614134,
+        "color": "#368368",
+        "entry_snell_residual": 2.220446049250313e-16,
+        "exit_snell_residual": 0.0
+      },
+      {
+        "wavelength_nm": 450,
+        "stipulated_refractive_index": 1.53,
+        "entry_mm": [
+          34.64101615137755,
+          60.0
+        ],
+        "exit_mm": [
+          85.3359075956137,
+          60.03996924265946
+        ],
+        "screen_mm": [
+          450.0,
+          -71.3487135384735
+        ],
+        "exit_angle_deg": -19.814120798723902,
+        "color": "#3962ab",
+        "entry_snell_residual": 2.220446049250313e-16,
+        "exit_snell_residual": 0.0
+      }
+    ]
+  }
+}

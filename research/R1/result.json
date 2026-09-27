@@ -1,0 +1,138 @@
+{
+  "artifacts": [
+    "research/R1/coupled-resonators.svg",
+    "research/R1/transient-budget.svg",
+    "research/R1/frequency-sweep.csv",
+    "research/R1/load-sweep.csv"
+  ],
+  "checks": [
+    {
+      "id": "positive-inductance",
+      "passed": true
+    },
+    {
+      "id": "phasor-power-closure",
+      "max_relative_residual": 8.012667385739365e-16,
+      "passed": true
+    },
+    {
+      "id": "closed-form-at-resonance",
+      "max_relative_error": 8.098097356089376e-16,
+      "passed": true
+    },
+    {
+      "id": "zero-coupling",
+      "passed": true
+    },
+    {
+      "id": "zero-source",
+      "passed": true
+    },
+    {
+      "absolute_error_A": 0.0,
+      "id": "mutual-sign-phase",
+      "passed": true
+    },
+    {
+      "absolute_error_W": 0.0,
+      "id": "mutual-sign-powers",
+      "passed": true
+    },
+    {
+      "id": "doubled-winding-loss",
+      "passed": true
+    },
+    {
+      "id": "transient-quadrature-closure",
+      "passed": true
+    },
+    {
+      "id": "transient-grid-refinement",
+      "passed": true,
+      "relative_difference": 2.1747933987282356e-08
+    },
+    {
+      "id": "transient-solver-refinement",
+      "passed": true,
+      "relative_difference": 7.974193564487474e-12
+    },
+    {
+      "id": "passive-sampled-efficiency",
+      "passed": true
+    },
+    {
+      "id": "gain-above-one-witness",
+      "passed": true
+    }
+  ],
+  "classification": "Modern reconstruction and synthetic circuit fixture, not Tesla's numerical apparatus, new law, measured efficiency or proof of energy extraction from vacuum.",
+  "limitations": [
+    "Finite fixture and frequency/load grid are not a global optimization theorem",
+    "No apparatus has been built or measured",
+    "The lumped circuit has no gravity or cosmological degree of freedom",
+    "Ideal sinusoidal source, lumped linear elements, no core hysteresis, stray capacitance, radiation, temperature dependence, source impedance beyond R1, sensor loading or environmental drive.",
+    "Voltage gain and apparent power do not measure energy production; all reported powers are real powers with peak-phasor factor 1/2."
+  ],
+  "metrics": {
+    "doubled_winding_efficiency": 0.3568596352101507,
+    "max_efficiency_sampled": 0.5999996587997733,
+    "max_voltage_gain_sampled": 4.526160773141764,
+    "nominal": {
+      "efficiency": 0.575447570332481,
+      "i1_imag_A": 3.2461538263261483e-17,
+      "i1_real_A": 0.16911764705882354,
+      "i2_imag_A": -0.06975612485665543,
+      "i2_real_A": 5.648918902727218e-17,
+      "load_ohm": 20.0,
+      "load_power_W": 0.04865916955017302,
+      "omega_rad_s": 3162.277660168379,
+      "power_residual_W": -1.3877787807814457e-17,
+      "source_power_W": 0.08455882352941177,
+      "voltage_gain": 1.3951224971331087,
+      "winding_loss_W": 0.03589965397923876
+    },
+    "omega0_rad_s": 3162.277660168379,
+    "reflected_resistance_ohm": 3.9130434782608696,
+    "resonance_frequency_Hz": 503.2921210448703,
+    "sampled_rows": 3205,
+    "transients": [
+      {
+        "load_heat_J": 0.011888246904273387,
+        "relative_residual": 3.235374978815753e-08,
+        "residual_J": 6.813361267321225e-10,
+        "rtol": 1e-10,
+        "samples": 5001,
+        "source_work_J": 0.02105895394485348,
+        "stored_energy_change_J": 0.00025437636888006566,
+        "winding_heat_J": 0.0089163299903639
+      },
+      {
+        "load_heat_J": 0.011888247226558141,
+        "relative_residual": 2.0003559282482264e-09,
+        "residual_J": 4.212540245015356e-11,
+        "rtol": 1e-10,
+        "samples": 10001,
+        "source_work_J": 0.021058953486864748,
+        "stored_energy_change_J": 0.00025437636888006566,
+        "winding_heat_J": 0.008916329849301139
+      },
+      {
+        "load_heat_J": 0.011888247226406419,
+        "relative_residual": 2.0061867700266914e-09,
+        "residual_J": 4.224819387561862e-11,
+        "rtol": 1e-12,
+        "samples": 10001,
+        "source_work_J": 0.02105895348669682,
+        "stored_energy_change_J": 0.0002543763688773362,
+        "winding_heat_J": 0.008916329849164871
+      }
+    ]
+  },
+  "round": "R1",
+  "summary": [
+    "At the fixed nominal load, receiver voltage gain is 1.395122, with load/source power fraction 0.575448.",
+    "The passive receiver is supplied by the source; reflected resistance changes the source current.",
+    "Finite-time source work equals load heat, winding heat and stored-energy change within external-quadrature tolerance."
+  ],
+  "title": "Coupled resonators: loading, voltage gain and the complete source budget"
+}

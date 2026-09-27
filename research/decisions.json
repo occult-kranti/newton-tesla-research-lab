@@ -1,0 +1,254 @@
+{
+  "schema": "newton-tesla-decisions-v1",
+  "program": {
+    "rounds": 3,
+    "loops_per_round": 2,
+    "status": "completed",
+    "authorship": "Coordinated model-agent work; historical persons are methodological lenses and did not participate. No external peer review.",
+    "completed_at": "2026-09-27T02:57:41.108351+00:00",
+    "scientific_status": "Three reviewed synthetic investigations; no hardware observations or extraordinary physical effect established.",
+    "publication_status": "Tracked separately by the root release; scientific admission is not deployment verification."
+  },
+  "rounds": [
+    {
+      "id": "R1",
+      "title": "Coupled resonators: loading, voltage gain and the complete source budget",
+      "contract": "docs/contracts/R1.json",
+      "producer": "research/R1/result.json",
+      "review": "research/reviews/R1-review.json",
+      "verdict": "accepted_narrow",
+      "summary": [
+        "The frozen passive two-resonator fixture has receiver load voltage gain 1.395122497 at nominal tuning while load/source real-power ratio is 0.575447570; voltage amplification does not create energy.",
+        "All 3205 saved phasor rows agree with independent determinant formulas. All three saved transients agree with an exact constant-matrix propagator, including complete source, load, winding and stored-energy accounting.",
+        "Source backaction is represented by reflected impedance; reversing mutual coupling reverses receiver phase but preserves powers."
+      ],
+      "limits": [
+        "Synthetic linear lumped-element fixture, no apparatus measurements, core/radiation/thermal/environment/sensor effects.",
+        "Finite-grid comparisons do not certify a global optimum or a universal numerical enclosure.",
+        "Passive parameter domain excludes the singular inductance boundary |M|=sqrt(L1 L2); the frozen calculation is not a solver for invalid element values.",
+        "A receiver amplitude alone does not locate the origin of its drive; additional phase/calibration assumptions are identifying premises."
+      ],
+      "nextDecision": "Freeze R2: source localization, exact inverse rivals and bounded calibration errors.",
+      "loops": [
+        {
+          "id": "R1A",
+          "status": "completed_producer",
+          "timestamp": "2026-09-27T02:39:29.042889+00:00",
+          "timestampMeaning": "Contract freeze; producer output admitted before following review.",
+          "artifacts": [
+            {
+              "path": "docs/contracts/R1.json",
+              "sha256": "328c7b2250e594e5f666b8020360d5e23d264ac5cc13492d378d0a05a2b60956"
+            },
+            {
+              "path": "research/R1/result.json",
+              "sha256": "298f57e70b4f479fe2b5542301f6f40ced5baf8ef92039b78067aeee0f0792ae"
+            },
+            {
+              "path": "research/R1/manifest.json",
+              "sha256": "e51f26936c6b44ac9db161238fb00efca6bf6bcfc1db487100646155b27d2beb"
+            }
+          ]
+        },
+        {
+          "id": "R1B",
+          "status": "accepted_narrow",
+          "timestamp": "2026-09-27T02:43:44.261848+00:00",
+          "artifacts": [
+            {
+              "path": "research/reviews/R1-review.json",
+              "sha256": "9676c597dc3d1572704873874e490ae2bfda5e404dcb90c9ced497575ccc3bae"
+            },
+            {
+              "path": "research/reviews/check_r1.py",
+              "sha256": "5aae80c8d91768ba62b05500dce233f1c11c54524043d81dfb644a4fd209deeb"
+            },
+            {
+              "path": "research/reviews/R1-independent-checks.json",
+              "sha256": "c1899bdbf6551a50cd6a8a21f959ce8e437a9cd8631e41863b658fa01e194248"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "title": "Which drive is visible? Phase readout and source localization",
+      "contract": "docs/contracts/R2.json",
+      "producer": "research/R2/result.json",
+      "review": "research/reviews/R2-review.json",
+      "verdict": "accepted_narrow",
+      "summary": [
+        "Under calibrated known impedance and a shared phase reference, two complex currents identify four real effective-drive coordinates. The restricted observation maps have local ranks1/2/2 and nullities3/2/2; explicit finite rival sources reproduce their readouts.",
+        "The nominal5mV receiver-drive injection is enclosed in a deterministic1.9322204465mV error disk and excludes zero only under supplied current/M bounds. All128 saved boundary fixtures are independently reconstructed and included.",
+        "A0.003rad receiver-channel phase skew creates a4.8131708102mV false residual at zero true receiver drive; full phase-calibration premises matter as much as current precision."
+      ],
+      "limits": [
+        "Local squared-amplitude kernels apply at the nonzero fixture; the zero-current Jacobian is rank0 and these nonlinear maps are not globally constant.",
+        "Source localization within a circuit is not physical-source identity; no dark-matter coupling, gravity mechanism or free-energy measurement is present.",
+        "Supplied bounded errors are neither empirical calibration nor confidence levels; the128 checks do not estimate statistical coverage.",
+        "Only mutual inductance and current errors are bounded here; unknown additional transfer/phase error causes withholding, not a finite unconditional interval."
+      ],
+      "nextDecision": "Freeze R3: calibrated environmental witness, transfer uncertainty, signal leakage and residual source-identity ambiguity.",
+      "loops": [
+        {
+          "id": "R2A",
+          "status": "completed_producer",
+          "timestamp": "2026-09-27T02:45:25.226639+00:00",
+          "timestampMeaning": "Contract freeze; producer output admitted before following review.",
+          "artifacts": [
+            {
+              "path": "docs/contracts/R2.json",
+              "sha256": "611e3faa6c3550e697e12faa968ff75ec39fa1553572685845882a324bdfbb2d"
+            },
+            {
+              "path": "research/R2/result.json",
+              "sha256": "86b799a7291d731543fed45e304c17c45b4ac3b63c2eb5617625486b88e2e9c5"
+            },
+            {
+              "path": "research/R2/manifest.json",
+              "sha256": "e101c66208e34702cc26a5deb3cff12ee15462e2868bd3c124854743f6399fb5"
+            }
+          ]
+        },
+        {
+          "id": "R2B",
+          "status": "accepted_narrow",
+          "timestamp": "2026-09-27T02:50:46.722230+00:00",
+          "artifacts": [
+            {
+              "path": "research/reviews/R2-review.json",
+              "sha256": "fe8e495cfd359cd2951b295dc20657c29ec18aa00ea826904a90bcc962d68c28"
+            },
+            {
+              "path": "research/reviews/check_r2.py",
+              "sha256": "cada3b7ae61ba3aa1ad3c011ffacedacd7154bd0a8ffbd99c96d991eb76a8b90"
+            },
+            {
+              "path": "research/reviews/R2-independent-checks.json",
+              "sha256": "270a8376e8f97f9beb16630b69092f57d0a0845bf76fa3e9f5b997ccedac9b72"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R3",
+      "title": "A witness channel: subtracting ordinary pickup without inventing a cause",
+      "contract": "docs/contracts/R3.json",
+      "producer": "research/R3/result.json",
+      "review": "research/reviews/R3-review.json",
+      "verdict": "accepted_narrow",
+      "summary": [
+        "The clean calibrated witness identifies a stipulated5mV effective signal in this finite transfer model. Its nominal deterministic error disk has radius2.726227766mV under newly supplied receiver/witness/transfer bounds.",
+        "All512 saved boundary fixtures, saved maps/kernelbases and exact raw-observation rivals are independently reconstructed. The separately aligned fixture attains the bound to1.30e-18V.",
+        "Unknown transfer admits a zero-signal rival matching both observations. Known crossleak can be inverted only when1\u2212a*beta is nonzero; the singular map has realrank2/nullity2 and unique inversion is withheld.",
+        "Even perfect witness subtraction leaves an exact physical-identity ambiguity: exchanging a hypothetical exotic voltage with an unmonitored ordinary voltage at the same port preserves both raw observations."
+      ],
+      "limits": [
+        "This is a single-frequency effective-voltage model, not a field solution, built detector, gravity mechanism, energy-extraction experiment or dark-matter sensitivity calculation.",
+        "The2mV receiver allowance is a new supplied premise informed by the R2 scale; it is not an automatically transferred calibrated bound.",
+        "The512 fixtures are deterministic tests, not statistical coverage or a false-alarm rate; supplied bounds need measured justification.",
+        "Conditioning-path measurement-only radii assume exact a and beta; uncertainty in either requires additional propagation.",
+        "No measured apparatus data or independent external replication is supplied; historical inspiration and patent/government provenance confer no performance evidence."
+      ],
+      "nextDecision": "End the authorized three-round program. Next gate: measured component/readout/witness calibration and a mechanism-specific raw-observation discriminator against the ordinary same-port rival.",
+      "loops": [
+        {
+          "id": "R3A",
+          "status": "completed_producer",
+          "timestamp": "2026-09-27T02:52:04.567768+00:00",
+          "timestampMeaning": "Contract freeze; producer output admitted before following review.",
+          "artifacts": [
+            {
+              "path": "docs/contracts/R3.json",
+              "sha256": "12d23bdce8f7f41a65eebef36540e14551c7986f25106ab496f8b9b974f0526a"
+            },
+            {
+              "path": "research/R3/result.json",
+              "sha256": "ec63babb80dad020240e3bb19bad19eec46e6a9fef9682757c871b618a39e67e"
+            },
+            {
+              "path": "research/R3/manifest.json",
+              "sha256": "3bf42d9c56847b17aa3c36f9844bd9ef633c93ccc656544044091a26bb1e355a"
+            }
+          ]
+        },
+        {
+          "id": "R3B",
+          "status": "accepted_narrow",
+          "timestamp": "2026-09-27T02:57:41.108351+00:00",
+          "artifacts": [
+            {
+              "path": "research/reviews/R3-review.json",
+              "sha256": "2573a34c7939f72112bfed3df95cb68c54da2de4866a5606fce3fd046d5ac6c1"
+            },
+            {
+              "path": "research/reviews/check_r3.py",
+              "sha256": "13c8cad4fe0c12a753a050a6b495a371fefba4338a5451184ddcbef35b838bcd"
+            },
+            {
+              "path": "research/reviews/R3-independent-checks.json",
+              "sha256": "2cc6e40dae1d5938250969ccff021ca24df5a0ef81a8585b323f173e14326cf6"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "loop_count": 6,
+  "counts": {
+    "producer_checks": 39,
+    "independent_checks": 55,
+    "reproducible_producer_outputs": 32,
+    "producer_manifest_bindings": 45,
+    "source_records": 25,
+    "grouped_hypotheses": 15
+  },
+  "final_bindings": [
+    {
+      "path": "docs/panel-log.md",
+      "sha256": "b67837b6f0485e1bcb4edf5fb5ad4a63438b3cb0623d5e3ee8504dde8c1b363d"
+    },
+    {
+      "path": "docs/roadmap.md",
+      "sha256": "51c7a0d634eb3c1a7d5d5178c1d83b3bfe69bbc537d3894d5ec39a8e267ef3d2"
+    },
+    {
+      "path": "docs/derivations.md",
+      "sha256": "50ed0d63672cc2d43aca2749b91ef7dd5a6d3faa67fa20c8fdc130e468dabe7b"
+    },
+    {
+      "path": "docs/advisor-review.md",
+      "sha256": "8ff0b0fa0b6d04e5e9da5444e1a61a085d1d1ab9cdb6174a9b45650f029da45f"
+    },
+    {
+      "path": "docs/skeptic-review.md",
+      "sha256": "8beb5c01ee8d02b284687fb737a46aa9e60d1c3ed9862bbedd8664cab165b4c8"
+    },
+    {
+      "path": "data/sources.json",
+      "sha256": "0f550c938df0e3d9a813016c54189f3dca4610a6fde2b5af3d456b58dcb69c24"
+    },
+    {
+      "path": "data/hypotheses.json",
+      "sha256": "2e20de76497493752eaadedd5bed90ca86ae26ccac413ad2c5bdee899c3a1874"
+    },
+    {
+      "path": "docs/source-review.md",
+      "sha256": "9236610adc9f38970e5c4e3fc2a25ef2fd16c12f9ee42020bdb05af452bbb7c5"
+    },
+    {
+      "path": "docs/historical-corpus.md",
+      "sha256": "38b37118cd5d11a14daac8a2c4a8eb19cf2aae468c92d9f0b5fcbdd302706239"
+    },
+    {
+      "path": "docs/tool-audit.md",
+      "sha256": "fb5c43c0c7cc9a2952c156f038c187153ea28ea7e5381067942e14c12d0f67d3"
+    },
+    {
+      "path": "research/README.md",
+      "sha256": "005d6b671c7d530d174eaa5de85b0d81f2b0f5d92292a608b267d4e5c61644ed"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "stage": "Python parsing, before any simulation or scientific review",
+  "observedError": "SyntaxError: closing parenthesis ')' does not match opening parenthesis '['",
+  "cause": "Missing closing row-list bracket in the crossleak CSV list comprehension.",
+  "repair": "Add the missing list bracket; equations, parameters and acceptance thresholds remain unchanged.",
+  "retainedEvidence": "run.py.failed is the complete pre-repair source. No numerical output or manifest was produced by this failed parse.",
+  "classification": "Programming repair, not physical evidence or an additional panel loop"
+}

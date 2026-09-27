@@ -1,0 +1,2 @@
+# Research hashes bind exact bytes, including CSV line endings and generated SVGs.
+* -text

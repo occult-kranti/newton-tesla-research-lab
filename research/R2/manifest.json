@@ -1,0 +1,86 @@
+{
+  "contract": {
+    "path": "docs/contracts/R2.json",
+    "sha256": "611e3faa6c3550e697e12faa968ff75ec39fa1553572685845882a324bdfbb2d"
+  },
+  "dependencies": [
+    {
+      "path": "scripts/numerics.py",
+      "sha256": "0fee6e048a0a60fe14f3dae7b74c6f726377f3cc0235b5a39e22fbf09752eba2"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "815360a00e0e1d7a128cade3de11b66d3fe997cbd6e2c69f8081eb9bc8b88197"
+    },
+    {
+      "path": "docs/contracts/R1.json",
+      "sha256": "328c7b2250e594e5f666b8020360d5e23d264ac5cc13492d378d0a05a2b60956"
+    }
+  ],
+  "files": [
+    {
+      "bytes": 1254,
+      "path": "research/R2/exact-rivals.json",
+      "sha256": "2d777b773ec9472c31af664e4c40fc7a1d6525bf242cd98977ec6935bce0ae6b"
+    },
+    {
+      "bytes": 3969,
+      "path": "research/R2/observation-maps.json",
+      "sha256": "92d8ec47ad605206b4d8336064262742abc8cd577082c8f910da897fc9ae1f88"
+    },
+    {
+      "bytes": 773,
+      "path": "research/R2/observations-and-rivals.csv",
+      "sha256": "d979e12a16eb49a3f57e19f2bab1178d9e2240add51ffa1441af19791a89c904"
+    },
+    {
+      "bytes": 1178,
+      "path": "research/R2/parameters.json",
+      "sha256": "0b00903a45e9f7af8934a534b34cc1dc9e51897d4db5d469e6d4a9baa6d768a1"
+    },
+    {
+      "bytes": 561,
+      "path": "research/R2/phase-artifacts.csv",
+      "sha256": "4a14960524b1ae352def7124373d5c376c8570346057437a45672c9e41eb9819"
+    },
+    {
+      "bytes": 38011,
+      "path": "research/R2/phase-error-artifact.svg",
+      "sha256": "a0f482538f1c4e101625d2f8aa7cfa4aefde83c13c31c201a4d04b00a3fb2115"
+    },
+    {
+      "bytes": 2551,
+      "path": "research/R2/report.md",
+      "sha256": "0c9e8868a26fd232615ebd3083a019efd8a3cf420cee5e52aacf2a9d97880c0d"
+    },
+    {
+      "bytes": 4878,
+      "path": "research/R2/result.json",
+      "sha256": "86b799a7291d731543fed45e304c17c45b4ac3b63c2eb5617625486b88e2e9c5"
+    },
+    {
+      "bytes": 14730,
+      "path": "research/R2/run.py",
+      "sha256": "137e2e43a4f7c3402a3457862053a6cfc57780f0889e5a76965371bb48d778a4"
+    },
+    {
+      "bytes": 85830,
+      "path": "research/R2/source-identifiability.svg",
+      "sha256": "16fa3e8f83e2fb157a5a7aa678571d25fc506f71befe34dc5468f050de9d87d5"
+    },
+    {
+      "bytes": 30732,
+      "path": "research/R2/uncertainty-boundary-fixtures.csv",
+      "sha256": "d60ba7d815b76c8e002c45dd3478be034cf02f2f8606374cdfad637f418beeb7"
+    }
+  ],
+  "kind": "synthetic-producer-artifacts",
+  "round": "R2",
+  "runtime": {
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "scipy": "1.17.0"
+  },
+  "schemaVersion": 1
+}

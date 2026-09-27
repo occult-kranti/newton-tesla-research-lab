@@ -1,0 +1,168 @@
+{
+  "artifacts": [
+    "research/R2/source-identifiability.svg",
+    "research/R2/phase-error-artifact.svg",
+    "research/R2/observations-and-rivals.csv",
+    "research/R2/uncertainty-boundary-fixtures.csv",
+    "research/R2/phase-artifacts.csv"
+  ],
+  "checks": [
+    {
+      "id": "nominal-source-reconstruction",
+      "max_error_V": 2.0816681711721685e-17,
+      "passed": true
+    },
+    {
+      "id": "declared-local-ranks",
+      "passed": true,
+      "ranks": [
+        1,
+        2,
+        2,
+        4
+      ]
+    },
+    {
+      "id": "declared-local-nullities",
+      "nullities": [
+        3,
+        2,
+        2,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "id": "jacobian-kernel-witnesses",
+      "passed": true
+    },
+    {
+      "id": "zero-current-squared-jacobian",
+      "passed": true,
+      "rank": 0
+    },
+    {
+      "id": "finite-phase-rival",
+      "observable_error_A2": 1.734723475976807e-18,
+      "passed": true,
+      "source_separation_V": 2.4521446950006123
+    },
+    {
+      "id": "receiver-complex-kernel-rival",
+      "observable_error_A": 1.3878067392045223e-17,
+      "passed": true,
+      "source_separation_V": 0.21679483388678805
+    },
+    {
+      "fixture_count": 128,
+      "id": "bounded-fixture-disk-inclusion",
+      "minimum_margin_V": 1.4347203481680781e-10,
+      "passed": true
+    },
+    {
+      "id": "phase-artifact-exact-formula",
+      "max_error_V": 1.912939208079112e-16,
+      "passed": true
+    },
+    {
+      "id": "zero-drive-nonzero-artifact",
+      "passed": true
+    },
+    {
+      "exclusion_margin_V": 0.003067779553453889,
+      "id": "bounded-positive-control-excludes-zero",
+      "passed": true
+    },
+    {
+      "id": "unknown-calibration-withheld",
+      "interpretation": "No finite unconditional source-voltage disk is reported when calibration bounds are unknown.",
+      "passed": true
+    }
+  ],
+  "classification": "Modern synthetic inverse-problem fixture. Inferred effective voltage is not identification of dark matter, free energy, gravity or a historical Tesla theory.",
+  "limitations": [
+    "Effective source location is not physical source identity",
+    "Calibration bounds are supplied assumptions, not measured performance",
+    "Rank calculations are finite model properties; real instruments require calibrated transfer functions",
+    "No dark-matter search sensitivity or detection significance is calculated",
+    "No cosmological field, stochastic detector noise, calibration drift, instrument transfer uncertainty beyond specified disk/M bounds, nonlinear material response or unmeasured additional port.",
+    "The 128 endpoint fixtures check a proven triangle-inequality disk; their inclusion is not statistical confidence or measured coverage.",
+    "At zero currents, the squared-amplitude Jacobians have rank zero; the nonlinear maps are not globally constant."
+  ],
+  "metrics": {
+    "bounded_fixture_count": 128,
+    "injected_source_V": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0025000000000000005,
+        0.004330127018922193
+      ]
+    ],
+    "max_bounded_error_V": 0.0019342515692856868,
+    "max_fixture_disk_radius_V": 0.0019344414488082456,
+    "nominal_current_A": [
+      [
+        0.16941969993980066,
+        -0.0001743903121416059
+      ],
+      [
+        3.67647058824095e-05,
+        -0.06969244651814187
+      ]
+    ],
+    "nominal_receiver_disk_radius_V": 0.0019322204465461292,
+    "nominal_reconstructed_source_V": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0025000000000000005,
+        0.004330127018922214
+      ]
+    ],
+    "nominal_zero_exclusion_margin_V": 0.003067779553453889,
+    "observation_local_nullities": [
+      3,
+      2,
+      2,
+      0
+    ],
+    "observation_local_ranks": [
+      1,
+      2,
+      2,
+      4
+    ],
+    "omega_rad_s": 3162.277660168379,
+    "phase_artifacts": [
+      {
+        "false_receiver_amplitude_V": 0.0,
+        "phase_error_rad": 0.0
+      },
+      {
+        "false_receiver_amplitude_V": 0.0016043908048534558,
+        "phase_error_rad": 0.001
+      },
+      {
+        "false_receiver_amplitude_V": 0.004813170810169697,
+        "phase_error_rad": 0.003
+      },
+      {
+        "false_receiver_amplitude_V": 0.016043841867494656,
+        "phase_error_rad": 0.01
+      }
+    ],
+    "unknown_calibration_receiver_interval": null
+  },
+  "round": "R2",
+  "summary": [
+    "Both calibrated, coherent complex-current channels reconstruct the two effective complex drive voltages; restricted readouts admit exact rival drives.",
+    "The injected 5 mV drive excludes zero only inside the supplied deterministic calibration model (nominal radius 1.932220 mV).",
+    "Channel phase error alone produces a receiver-drive residual when the true receiver drive is zero."
+  ],
+  "title": "Which drive is visible? Phase readout and source localization"
+}

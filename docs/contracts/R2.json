@@ -1,0 +1,124 @@
+{
+  "schema": "newton-tesla-contract-v1",
+  "round": "R2",
+  "frozen_at": "2026-09-27T02:45:25.226639+00:00",
+  "title": "Which drive is visible? Phase readout and source localization",
+  "question": "Under the R1 circuit, which source-channel combinations are identifiable from amplitude-only, single complex-channel and two coherent complex-channel observations, and how can readout error create a false receiver-drive residual?",
+  "incoming_evidence": {
+    "previous_review": "research/reviews/R1-review.json",
+    "verdict": "accepted_narrow",
+    "accepted": "Passive coupled loading closes the energy budget; receiver voltage gain alone does not locate the drive.",
+    "selected_objection": "R1B calls for exact rival drives, inverse kernels and explicit complex-readout error bounds.",
+    "previous_review_sha256": "9676c597dc3d1572704873874e490ae2bfda5e404dcb90c9ced497575ccc3bae"
+  },
+  "historical_lenses": {
+    "Newton": "Reconstruct hidden causes from a declared observation map and state its kernel.",
+    "Tesla": "Keep both phase and readout/loading channels in the mechanism."
+  },
+  "source_records": [
+    {
+      "id": "NT-ABRA2021",
+      "url": "https://arxiv.org/html/2102.06722v1",
+      "section": "Supplementary III calibration EqS1; magnet-off/background controls",
+      "reading_status_at_freeze": "Source agent selected full-text reading; advisor opened paper",
+      "relation": "inspires calibration and control design, not our signal sensitivity"
+    },
+    {
+      "id": "NT-DMRADIO-CORE2026",
+      "url": "https://arxiv.org/html/2604.16602v1",
+      "section": "II, III.1 and III.2 pickup/readout and phase coherence",
+      "reading_status_at_freeze": "Advisor selected full-text reading; Eq2 frequency notation inconsistency recorded by source agent",
+      "relation": "motivates complete readout; not a particle model in this fixture"
+    }
+  ],
+  "classification": "Modern synthetic inverse-problem fixture. Inferred effective voltage is not identification of dark matter, free energy, gravity or a historical Tesla theory.",
+  "state_and_units": {
+    "e1,e2": "unknown complex effective peak source voltages, V; domain C\u00b2 = R\u2074",
+    "I1,I2": "complex peak currents, A",
+    "squared_magnitudes": "A\u00b2",
+    "M": "mutual inductance, H",
+    "omega": "rad/s",
+    "phase": "rad",
+    "reconstruction_disk": "deterministic complex voltage-error disk, V; not a confidence interval"
+  },
+  "parameters": {
+    "inherits": "R1 nominal inductances, capacitances, R1,R2,RL20ohm, omega0",
+    "source1_complex_V": [
+      1.0,
+      0.0
+    ],
+    "injected_receiver_amplitude_V": 0.005,
+    "injected_receiver_phase_rad": 1.0471975511965976,
+    "current_error_bounds_A": [
+      1e-05,
+      1e-05
+    ],
+    "mutual_inductance_error_bound_H": 3e-06,
+    "error_phase_points": 8,
+    "phase_error_grid_rad": [
+      0.0,
+      0.001,
+      0.003,
+      0.01
+    ],
+    "finite_rival_receiver_phase_rotation_rad": 1.5707963267948966
+  },
+  "model": {
+    "forward": "I=Z^-1 e with the checked R1 nominal Z; both actual source port voltages are unknown for inference. Source knob values are not substituted for measured source voltages.",
+    "observation_maps": [
+      "receiver amplitude squared: |I2|\u00b2 (one real)",
+      "both amplitude squares: (|I1|\u00b2,|I2|\u00b2) (two real)",
+      "receiver complex: (ReI2,ImI2) (two real)",
+      "both coherent complex: (ReI1,ImI1,ReI2,ImI2) (four real)"
+    ],
+    "identifiability": "Report domain dimension4 and real ranks/nullities. For nonlinear squared-amplitude maps distinguish local Jacobian kernels at the nonzero fixture from exact finite phase-rival families; zero-current boundary has rank0 for those squared maps.",
+    "exact_rivals": "Full receiver complex current is unchanged by I\u2192I+(delta,0), e\u2192e+Z(delta,0). Both current magnitudes are unchanged by I\u2192(I1,exp(i phi)I2), e\u2192Z I'. Verify changed source vectors reproduce identical restricted observations.",
+    "coherent_reconstruction": "ehat=Zhat Ihat; calibrated full complex map rank4. For secondary reconstruction with only M uncertain and |\u03b4Ij|\u2264epsilon_j, bound |ehat2-e2| \u2264 omega |Mhat| epsilon1 + |Zhat22| epsilon2 + omega \u0394M (|Ihat1|+epsilon1). All other component parameters exact in this bounded model.",
+    "phase_artifact": "Set true e2=0. Rotate only measured I2 by each frozen phase error and reconstruct ehat2. Compare exact artifact Z22 I2(exp(i phi)-1) with numerical inversion.",
+    "boundary": "No cosmological field, stochastic detector noise, calibration drift, instrument transfer uncertainty beyond specified disk/M bounds, nonlinear material response or unmeasured additional port."
+  },
+  "controls": [
+    "Nominal two-current complex reconstruction returns injected source voltages",
+    "Explicit exact phase-rival and receiver-kernel examples",
+    "Analytical real Jacobians with ranks and kernel witnesses for all four maps; distinguish zero-current squared-amplitude rank0",
+    "128 boundary fixtures: 8 phases per independent current error times two M error endpoints; evaluate deterministic disk inclusion, no probabilistic coverage claim",
+    "Zero receiver drive with phase error creates a nonzero reconstructed receiver drive",
+    "Compare bounded disk exclusion of zero for nominal injected signal; unknown calibration means withhold unconditional signal claim"
+  ],
+  "acceptance": {
+    "nominal_source_reconstruction_absolute_V": 1e-12,
+    "exact_rival_observable_error": 1e-12,
+    "jacobian_kernel_residual": 1e-10,
+    "expected_local_ranks": [
+      1,
+      2,
+      2,
+      4
+    ],
+    "expected_local_nullities": [
+      3,
+      2,
+      2,
+      0
+    ],
+    "expected_zero_amplitude_jacobian_rank": 0,
+    "bounded_error_exceedance_tolerance_V": 1e-12,
+    "phase_artifact_absolute_error_V": 1e-12,
+    "positive_control": "Nominal5mV fixture with stated bounds excludes zero; absence must be reported, not repaired by retuning parameters."
+  },
+  "artifacts": [
+    "research/R2/result.json",
+    "research/R2/report.md",
+    "research/R2/manifest.json",
+    "CSV observations, rivals and uncertainty fixtures",
+    "Deterministic SVG observation/uncertainty plots"
+  ],
+  "falsifier": "Failure to recover the stipulated effective drive under exact calibrated full readout rejects the implementation; a restricted observation with an exact rival cannot establish source identity.",
+  "limits": [
+    "Effective source location is not physical source identity",
+    "Calibration bounds are supplied assumptions, not measured performance",
+    "Rank calculations are finite model properties; real instruments require calibrated transfer functions",
+    "No dark-matter search sensitivity or detection significance is calculated"
+  ],
+  "next_round_rule": "Choose R3 only after R2B. Candidate: add an environmental witness to test whether a residual receiver drive can be separated from ordinary pickup, and identify which witness/calibration assumptions are indispensable."
+}

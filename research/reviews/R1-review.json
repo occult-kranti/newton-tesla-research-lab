@@ -1,0 +1,112 @@
+{
+  "accepted": [
+    "The frozen passive two-resonator fixture has receiver load voltage gain 1.395122497 at nominal tuning while load/source real-power ratio is 0.575447570; voltage amplification does not create energy.",
+    "All 3205 saved phasor rows agree with independent determinant formulas. All three saved transients agree with an exact constant-matrix propagator, including complete source, load, winding and stored-energy accounting.",
+    "Source backaction is represented by reflected impedance; reversing mutual coupling reverses receiver phase but preserves powers."
+  ],
+  "bindings": {
+    "contract_sha256": "328c7b2250e594e5f666b8020360d5e23d264ac5cc13492d378d0a05a2b60956",
+    "independent_results_sha256": "c1899bdbf6551a50cd6a8a21f959ce8e437a9cd8631e41863b658fa01e194248",
+    "independent_script_sha256": "5aae80c8d91768ba62b05500dce233f1c11c54524043d81dfb644a4fd209deeb",
+    "manifest_sha256": "e51f26936c6b44ac9db161238fb00efca6bf6bcfc1db487100646155b27d2beb",
+    "result_sha256": "298f57e70b4f479fe2b5542301f6f40ced5baf8ef92039b78067aeee0f0792ae"
+  },
+  "checks": [
+    {
+      "id": "all_manifest_bindings",
+      "passed": true
+    },
+    {
+      "id": "all_saved_phasor_rows_match_independent_formula",
+      "passed": true
+    },
+    {
+      "id": "all_three_saved_transients_match_matrix_exponential",
+      "passed": true
+    },
+    {
+      "id": "coupling_reversal_phase_and_power",
+      "passed": true
+    },
+    {
+      "id": "critical_coupling_is_excluded_singular_boundary",
+      "passed": true
+    },
+    {
+      "id": "doubled_winding_resistance_lowers_efficiency",
+      "passed": true
+    },
+    {
+      "id": "entire_frozen_frequency_grid_passive",
+      "passed": true
+    },
+    {
+      "id": "gain_above_one_below_unit_efficiency",
+      "passed": true
+    },
+    {
+      "id": "independent_exact_transient_budget",
+      "passed": true
+    },
+    {
+      "id": "independent_transient_grid_convergence",
+      "passed": true
+    },
+    {
+      "id": "nominal_real_power_identity",
+      "passed": true
+    },
+    {
+      "id": "positive_definite_storage",
+      "passed": true
+    },
+    {
+      "id": "producer_nominal_claims_match_independent_result",
+      "passed": true
+    },
+    {
+      "id": "resonant_reflected_resistance_formula",
+      "passed": true
+    },
+    {
+      "id": "zero_coupling_zero_receiver",
+      "passed": true
+    },
+    {
+      "id": "zero_source_zero_everything",
+      "passed": true
+    }
+  ],
+  "independence": "Separate agent and implementation; same model family/shared brief, not external peer review. No producer numerical methods imported.",
+  "limitations": [
+    "Synthetic linear lumped-element fixture, no apparatus measurements, core/radiation/thermal/environment/sensor effects.",
+    "Finite-grid comparisons do not certify a global optimum or a universal numerical enclosure.",
+    "Passive parameter domain excludes the singular inductance boundary |M|=sqrt(L1 L2); the frozen calculation is not a solver for invalid element values.",
+    "A receiver amplitude alone does not locate the origin of its drive; additional phase/calibration assumptions are identifying premises."
+  ],
+  "method": "Explicit complex determinant and reflected impedance; capacitor-voltage-state matrix exponential with independent external Simpson quadrature",
+  "metrics": {
+    "independent_transient_residual_J": 4.225111742677673e-11,
+    "saved_output_comparison": {
+      "max_current_error_A": 1.415262216750919e-16,
+      "max_power_error_W": 1.1102230246251565e-16,
+      "max_transient_charge_error_C": 1.2038770859108122e-14,
+      "max_transient_current_error_A": 3.4097197287863423e-11,
+      "max_voltage_gain_error": 1.3322676295501878e-15,
+      "phasor_rows": 3205,
+      "transient_files": 3
+    }
+  },
+  "next_question": "Under the checked coupled linear model, what source channels are identifiable from one receiver amplitude, one complex receiver current, or both phase-referenced coil currents? Construct an exact alternative drive with the same receiver readout, compute each inverse kernel, and propagate explicit complex-readout error bounds before interpreting a residual drive.",
+  "paths": {
+    "contract": "docs/contracts/R1.json",
+    "independent_results": "research/reviews/R1-independent-checks.json",
+    "independent_script": "research/reviews/check_r1.py",
+    "manifest": "research/R1/manifest.json",
+    "result": "research/R1/result.json"
+  },
+  "reviewed_at": "2026-09-27T02:43:44.261848+00:00",
+  "reviewer": "/root/nt_skeptic",
+  "round": "R1",
+  "verdict": "accepted_narrow"
+}

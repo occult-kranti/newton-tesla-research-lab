@@ -1,0 +1,135 @@
+{
+  "accepted": [
+    "The clean calibrated witness identifies a stipulated5mV effective signal in this finite transfer model. Its nominal deterministic error disk has radius2.726227766mV under newly supplied receiver/witness/transfer bounds.",
+    "All512 saved boundary fixtures, saved maps/kernelbases and exact raw-observation rivals are independently reconstructed. The separately aligned fixture attains the bound to1.30e-18V.",
+    "Unknown transfer admits a zero-signal rival matching both observations. Known crossleak can be inverted only when1\u2212a*beta is nonzero; the singular map has realrank2/nullity2 and unique inversion is withheld.",
+    "Even perfect witness subtraction leaves an exact physical-identity ambiguity: exchanging a hypothetical exotic voltage with an unmonitored ordinary voltage at the same port preserves both raw observations."
+  ],
+  "bindings": {
+    "contract_sha256": "12d23bdce8f7f41a65eebef36540e14551c7986f25106ab496f8b9b974f0526a",
+    "independent_results_sha256": "2cc6e40dae1d5938250969ccff021ca24df5a0ef81a8585b323f173e14326cf6",
+    "independent_script_sha256": "13c8cad4fe0c12a753a050a6b495a371fefba4338a5451184ddcbef35b838bcd",
+    "manifest_sha256": "3bf42d9c56847b17aa3c36f9844bd9ef633c93ccc656544044091a26bb1e355a",
+    "result_sha256": "ec63babb80dad020240e3bb19bad19eec46e6a9fef9682757c871b618a39e67e"
+  },
+  "checks": [
+    {
+      "id": "all512_independent_boundary_fixtures_included",
+      "passed": true
+    },
+    {
+      "id": "all512_saved_error_fixtures_reconstructed",
+      "passed": true
+    },
+    {
+      "id": "all_declared_real_nullities",
+      "passed": true
+    },
+    {
+      "id": "all_declared_real_ranks",
+      "passed": true
+    },
+    {
+      "id": "all_manifest_bindings",
+      "passed": true
+    },
+    {
+      "id": "all_saved_maps_and_kernel_bases_verified",
+      "passed": true
+    },
+    {
+      "id": "clean_witness_recovers_signal",
+      "passed": true
+    },
+    {
+      "id": "explicit_two_real_dimensional_kernels",
+      "passed": true
+    },
+    {
+      "id": "independent_aligned_sharpness_fixture",
+      "passed": true
+    },
+    {
+      "id": "near_singular_inverse_and_conditioning_path",
+      "passed": true
+    },
+    {
+      "id": "nominal_disk_excludes_zero",
+      "passed": true
+    },
+    {
+      "id": "ordinary_drive_exact_physical_identity_rival",
+      "passed": true
+    },
+    {
+      "id": "producer_nominal_disk_verified",
+      "passed": true
+    },
+    {
+      "id": "saved_aligned_error_is_valid_and_sharp",
+      "passed": true
+    },
+    {
+      "id": "saved_conditioning_matches_trace_determinant_formula",
+      "passed": true
+    },
+    {
+      "id": "saved_physical_identity_rival_verifies_both_raw_readouts",
+      "passed": true
+    },
+    {
+      "id": "saved_unknown_transfer_rival_verifies_both_raw_readouts",
+      "passed": true
+    },
+    {
+      "id": "singular_crossleak_has_exact_rival",
+      "passed": true
+    },
+    {
+      "id": "singular_inverse_and_unconditional_exotic_interval_withheld",
+      "passed": true
+    },
+    {
+      "id": "unknown_transfer_zero_signal_exact_raw_rival",
+      "passed": true
+    },
+    {
+      "id": "zero_signal_background_subtracts_to_zero",
+      "passed": true
+    }
+  ],
+  "implementation_note": "A pre-admission missing-bracket syntax repair is retained in research/repairs/R3-pre-admission-run1. No scientific rejection or post-review scientific repair occurred.",
+  "independence": "Separate agent and independently derived algebra/boundary fixtures; same model family/shared brief, not external peer review. No producer numerical methods imported.",
+  "limitations": [
+    "This is a single-frequency effective-voltage model, not a field solution, built detector, gravity mechanism, energy-extraction experiment or dark-matter sensitivity calculation.",
+    "The2mV receiver allowance is a new supplied premise informed by the R2 scale; it is not an automatically transferred calibrated bound.",
+    "The512 fixtures are deterministic tests, not statistical coverage or a false-alarm rate; supplied bounds need measured justification.",
+    "Conditioning-path measurement-only radii assume exact a and beta; uncertainty in either requires additional propagation.",
+    "No measured apparatus data or independent external replication is supplied; historical inspiration and patent/government provenance confer no performance evidence."
+  ],
+  "method": "Algebraic minors and explicit complex kernels; independently constructed raw-observation rivals; triangle-inequality proof and512 boundary fixtures; aligned sharpness; closed-form two-by-two conditioning from trace/determinant",
+  "metrics": {
+    "aligned_sharpness_error_V": 1.3010426069826053e-18,
+    "condition_at_t_0_99": 485.02293824184096,
+    "nominal_disk_radius_V": 0.0027262277660168384,
+    "saved_output_comparison": {
+      "boundary_count": 512,
+      "max_boundary_reconstruction_error_V": 0.0,
+      "max_condition_relative_error": 1.476687020705519e-14,
+      "max_real_map_error": 0.0,
+      "max_saved_kernel_error": 1.1102230246251565e-16
+    }
+  },
+  "next_question": "The authorized three rounds/six loops end here. Before hardware interpretation, calibrate actual component/phase/source/readout transfer, then measure witness nuisance transfer and signal crosstalk with separate controlled injections over the intended band. Require a predeclared, independently calibrated configuration change with different predictions for the specific target mechanism and the ordinary same-port rival. Until that discriminator exists, report only an unexplained effective drive with conditional bounds.",
+  "paths": {
+    "contract": "docs/contracts/R3.json",
+    "independent_results": "research/reviews/R3-independent-checks.json",
+    "independent_script": "research/reviews/check_r3.py",
+    "manifest": "research/R3/manifest.json",
+    "result": "research/R3/result.json"
+  },
+  "reviewed_at": "2026-09-27T02:57:41.108351+00:00",
+  "reviewer": "/root/nt_skeptic",
+  "round": "R3",
+  "verdict": "accepted_narrow"
+}

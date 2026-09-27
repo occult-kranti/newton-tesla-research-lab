@@ -1,0 +1,252 @@
+[
+  {
+    "beta": [
+      0.0,
+      0.0
+    ],
+    "condition_2norm": 1.8633249580710805,
+    "determinant": [
+      1.0,
+      0.0
+    ],
+    "measurement_only_signal_error_radius_V": 0.002316227766016838,
+    "real_rank": 4,
+    "reconstructed_b_V": [
+      0.017320508075688773,
+      0.009999999999999998
+    ],
+    "reconstructed_s_V": [
+      0.0025000000000000005,
+      0.004330127018922193
+    ],
+    "reconstruction_max_error_V": 0.0,
+    "t": 0.0,
+    "unique_inverse_available": true,
+    "w_V": [
+      0.017320508075688773,
+      0.009999999999999998
+    ],
+    "y_V": [
+      0.010892304845413264,
+      0.013794228634059947
+    ]
+  },
+  {
+    "beta": [
+      0.375,
+      -0.12500000000000003
+    ],
+    "condition_2norm": 3.084088413642842,
+    "determinant": [
+      0.75,
+      0.0
+    ],
+    "measurement_only_signal_error_radius_V": 0.003088303688022451,
+    "real_rank": 4,
+    "reconstructed_b_V": [
+      0.017320508075688773,
+      0.009999999999999998
+    ],
+    "reconstructed_s_V": [
+      0.0025000000000000005,
+      0.004330127018922193
+    ],
+    "reconstruction_max_error_V": 0.0,
+    "t": 0.25,
+    "unique_inverse_available": true,
+    "w_V": [
+      0.018799273953054047,
+      0.011311297632095822
+    ],
+    "y_V": [
+      0.010892304845413264,
+      0.013794228634059947
+    ]
+  },
+  {
+    "beta": [
+      0.75,
+      -0.25000000000000006
+    ],
+    "condition_2norm": 5.879929946601141,
+    "determinant": [
+      0.5,
+      0.0
+    ],
+    "measurement_only_signal_error_radius_V": 0.004632455532033676,
+    "real_rank": 4,
+    "reconstructed_b_V": [
+      0.017320508075688773,
+      0.009999999999999998
+    ],
+    "reconstructed_s_V": [
+      0.0025000000000000005,
+      0.004330127018922193
+    ],
+    "reconstruction_max_error_V": 0.0,
+    "t": 0.5,
+    "unique_inverse_available": true,
+    "w_V": [
+      0.02027803983041932,
+      0.012622595264191643
+    ],
+    "y_V": [
+      0.010892304845413264,
+      0.013794228634059947
+    ]
+  },
+  {
+    "beta": [
+      1.35,
+      -0.45000000000000007
+    ],
+    "condition_2norm": 44.22738957669525,
+    "determinant": [
+      0.09999999999999987,
+      0.0
+    ],
+    "measurement_only_signal_error_radius_V": 0.02316227766016841,
+    "real_rank": 4,
+    "reconstructed_b_V": [
+      0.017320508075688773,
+      0.009999999999999976
+    ],
+    "reconstructed_s_V": [
+      0.0024999999999999957,
+      0.004330127018922207
+    ],
+    "reconstruction_max_error_V": 2.2551405187698492e-17,
+    "t": 0.9,
+    "unique_inverse_available": true,
+    "w_V": [
+      0.022644065234203762,
+      0.014720671475544959
+    ],
+    "y_V": [
+      0.010892304845413264,
+      0.013794228634059947
+    ]
+  },
+  {
+    "beta": [
+      1.485,
+      -0.49500000000000005
+    ],
+    "condition_2norm": 485.0229382418481,
+    "determinant": [
+      0.010000000000000009,
+      0.0
+    ],
+    "measurement_only_signal_error_radius_V": 0.23162277660168362,
+    "real_rank": 4,
+    "reconstructed_b_V": [
+      0.01732050807568879,
+      0.00999999999999964
+    ],
+    "reconstructed_s_V": [
+      0.0024999999999999172,
+      0.004330127018922407
+    ],
+    "reconstruction_max_error_V": 3.595065306723566e-16,
+    "t": 0.99,
+    "unique_inverse_available": true,
+    "w_V": [
+      0.02317642095005526,
+      0.015192738623099455
+    ],
+    "y_V": [
+      0.010892304845413264,
+      0.013794228634059947
+    ]
+  },
+  {
+    "beta": [
+      1.5,
+      -0.5000000000000001
+    ],
+    "condition_2norm": null,
+    "determinant": [
+      0.0,
+      0.0
+    ],
+    "measurement_only_signal_error_radius_V": null,
+    "real_rank": 2,
+    "reconstructed_b_V": null,
+    "reconstructed_s_V": null,
+    "reconstruction_max_error_V": null,
+    "t": 1.0,
+    "unique_inverse_available": false,
+    "w_V": [
+      0.02323557158514987,
+      0.015245190528383287
+    ],
+    "y_V": [
+      0.010892304845413264,
+      0.013794228634059947
+    ]
+  },
+  {
+    "beta": [
+      1.5150000000000001,
+      -0.5050000000000001
+    ],
+    "condition_2norm": 495.0229798917609,
+    "determinant": [
+      -0.010000000000000009,
+      0.0
+    ],
+    "measurement_only_signal_error_radius_V": 0.23162277660168362,
+    "real_rank": 4,
+    "reconstructed_b_V": [
+      0.017320508075688808,
+      0.010000000000000016
+    ],
+    "reconstructed_s_V": [
+      0.002499999999999983,
+      0.004330127018922176
+    ],
+    "reconstruction_max_error_V": 3.878959614448864e-17,
+    "t": 1.01,
+    "unique_inverse_available": true,
+    "w_V": [
+      0.023294722220244483,
+      0.015297642433667121
+    ],
+    "y_V": [
+      0.010892304845413264,
+      0.013794228634059947
+    ]
+  },
+  {
+    "beta": [
+      1.6500000000000001,
+      -0.5500000000000002
+    ],
+    "condition_2norm": 54.231560552751354,
+    "determinant": [
+      -0.10000000000000009,
+      0.0
+    ],
+    "measurement_only_signal_error_radius_V": 0.023162277660168363,
+    "real_rank": 4,
+    "reconstructed_b_V": [
+      0.01732050807568878,
+      0.009999999999999995
+    ],
+    "reconstructed_s_V": [
+      0.0024999999999999953,
+      0.004330127018922195
+    ],
+    "reconstruction_max_error_V": 7.757919228897728e-18,
+    "t": 1.1,
+    "unique_inverse_available": true,
+    "w_V": [
+      0.02382707793609598,
+      0.01576970958122162
+    ],
+    "y_V": [
+      0.010892304845413264,
+      0.013794228634059947
+    ]
+  }
+]

@@ -1,0 +1,93 @@
+{
+  "checks": {
+    "all128_saved_fixtures_independently_reconstructed": true,
+    "all_128_boundary_disks_contain_truth": true,
+    "all_manifest_bindings": true,
+    "all_saved_rival_drive_vectors_verified": true,
+    "coherent_source_reconstruction": true,
+    "expected_local_nullities": true,
+    "expected_local_ranks": true,
+    "explicit_kernel_bases": true,
+    "finite_complex_receiver_rival": true,
+    "finite_two_amplitude_rival": true,
+    "nominal_disk_excludes_zero": true,
+    "phase_skew_exact_artifact": true,
+    "producer_nominal_disk_and_ranks_verified": true,
+    "real_map_inverse": true,
+    "saved_jacobians_and_kernel_bases_verified": true,
+    "unknown_calibration_result_withheld": true,
+    "zero_phase_zero_residual_nonzero_phase_false_residual": true,
+    "zero_squared_amplitude_boundary_rank0": true
+  },
+  "independent_boundary_fixtures": {
+    "count": 128,
+    "max_error_V": 0.0019342515692854648,
+    "max_error_minus_radius_V": -1.4347181233852202e-10
+  },
+  "kernel_residuals": [
+    1.6940658945086007e-21,
+    4.989151806710679e-21,
+    6.834164153811371e-18,
+    0.0
+  ],
+  "limitations": [
+    "Finite covariance-free supplied bounds, not observed detector sensitivity or confidence intervals.",
+    "All four real drive coordinates are identifiable only with calibrated Z and a shared phase reference.",
+    "An effective electrical residual has no particle or gravity identity in this model."
+  ],
+  "method": "Explicit complex determinant; real observation derivatives; geometrically constructed null bases and exact finite phase/source rivals; triangle-inequality disk and 128 error-boundary checks",
+  "nominal_current_real_coordinates_A": [
+    0.16941969993980063,
+    -0.0001743903121416059,
+    3.67647058824095e-05,
+    -0.06969244651814187
+  ],
+  "nominal_exclusion_margin_V": 0.003067779553453871,
+  "nominal_reconstruction_disk_radius_V": 0.001932220446546129,
+  "nullities": [
+    3,
+    2,
+    2,
+    0
+  ],
+  "phase_artifacts": [
+    {
+      "error_V": 0.0,
+      "exact_amplitude_V": 0.0,
+      "inferred_amplitude_V": 0.0,
+      "phase_rad": 0.0
+    },
+    {
+      "error_V": 3.1045891217074826e-17,
+      "exact_amplitude_V": 0.001604390804853456,
+      "inferred_amplitude_V": 0.0016043908048534558,
+      "phase_rad": 0.001
+    },
+    {
+      "error_V": 1.3555430457354977e-16,
+      "exact_amplitude_V": 0.004813170810169696,
+      "inferred_amplitude_V": 0.004813170810169697,
+      "phase_rad": 0.003
+    },
+    {
+      "error_V": 1.912939208079112e-16,
+      "exact_amplitude_V": 0.016043841867494656,
+      "inferred_amplitude_V": 0.016043841867494656,
+      "phase_rad": 0.01
+    }
+  ],
+  "ranks": [
+    1,
+    2,
+    2,
+    4
+  ],
+  "round": "R2",
+  "saved_output_comparison": {
+    "boundary_count": 128,
+    "max_boundary_reconstruction_error": 4.440900568822021e-16,
+    "max_jacobian_error": 6.938893903907228e-18,
+    "max_saved_kernel_error": 5.0483964965469665e-18,
+    "max_saved_rival_current_error_A": 2.7755575615628914e-17
+  }
+}

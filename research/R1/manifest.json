@@ -1,0 +1,82 @@
+{
+  "contract": {
+    "path": "docs/contracts/R1.json",
+    "sha256": "328c7b2250e594e5f666b8020360d5e23d264ac5cc13492d378d0a05a2b60956"
+  },
+  "dependencies": [
+    {
+      "path": "scripts/numerics.py",
+      "sha256": "0fee6e048a0a60fe14f3dae7b74c6f726377f3cc0235b5a39e22fbf09752eba2"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "815360a00e0e1d7a128cade3de11b66d3fe997cbd6e2c69f8081eb9bc8b88197"
+    }
+  ],
+  "files": [
+    {
+      "bytes": 66937,
+      "path": "research/R1/coupled-resonators.svg",
+      "sha256": "606dbd9646d84dbbe917b98fda22b45077f190a33d9e0b9d490b552d92ceae4a"
+    },
+    {
+      "bytes": 650121,
+      "path": "research/R1/frequency-sweep.csv",
+      "sha256": "fc8d18d639cf620ddaa063c387eb5b6ae270f34a28cc8ac4427ea74383a0defb"
+    },
+    {
+      "bytes": 95316,
+      "path": "research/R1/load-sweep.csv",
+      "sha256": "63544f84b6c5aa3a725bd63179e80cb9d7790b2869753568ebeb2b606a501288"
+    },
+    {
+      "bytes": 476,
+      "path": "research/R1/parameters.json",
+      "sha256": "7803e1d3f3f4d8f2ce395c745d3ce2468934aada02c9e4a5e0dcd12890ee7ba2"
+    },
+    {
+      "bytes": 1910,
+      "path": "research/R1/report.md",
+      "sha256": "f25201669d3efbe4aaade11e72c8c9205aaf5393371136b84b53627d0c540ac3"
+    },
+    {
+      "bytes": 4557,
+      "path": "research/R1/result.json",
+      "sha256": "298f57e70b4f479fe2b5542301f6f40ced5baf8ef92039b78067aeee0f0792ae"
+    },
+    {
+      "bytes": 12683,
+      "path": "research/R1/run.py",
+      "sha256": "3941c5f9f99bc9940ac863d4ea9be3827319352e4a380682b1a8280f2870e8f4"
+    },
+    {
+      "bytes": 31605,
+      "path": "research/R1/transient-budget.svg",
+      "sha256": "40ed9ac7264c29449ceb815364501e859f4dc92fb922378b5f9e0c4c693b25db"
+    },
+    {
+      "bytes": 1839427,
+      "path": "research/R1/transient-n10001-rtol1e-10.csv",
+      "sha256": "7c5d4888c8072133de35c89f9efd52682fa54c644d5111ec22bf2c8b97773b20"
+    },
+    {
+      "bytes": 1839700,
+      "path": "research/R1/transient-n10001-rtol1e-12.csv",
+      "sha256": "553413f2bd8fdf8d0dc5b354102ae0fd29235f86e4e0cb8a00e1218dddd30e47"
+    },
+    {
+      "bytes": 917238,
+      "path": "research/R1/transient-n5001-rtol1e-10.csv",
+      "sha256": "6035bf0ff13269051c91f627cc9c8ac56753047364f4dd0e84cf6cd925a2a0b0"
+    }
+  ],
+  "kind": "synthetic-producer-artifacts",
+  "round": "R1",
+  "runtime": {
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "scipy": "1.17.0"
+  },
+  "schemaVersion": 1
+}

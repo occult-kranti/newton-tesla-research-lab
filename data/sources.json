@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 1,
+  "cutoff": "2026-09-27",
+  "scope": "Selected expandable corpus; no exhaustive-book claim, physical replication or generic free-energy/antigravity discovery.",
+  "sources": [
+    {
+      "id": "NT-NEWTON-MOTION",
+      "title": "De motu corporum in gyrum",
+      "url": "https://www.newtonproject.ox.ac.uk/view/texts/normalized/NATP00089",
+      "date": "1684",
+      "category": "gravity",
+      "sections": "Theorem 2, corollary 5 and Theorem 3; normalized Latin transcription.",
+      "readDepth": "Selected primary passage; not complete manuscript or facsimile collation.",
+      "claim": "Circular period/radius relations constrain a centripetal-force scaling.",
+      "limits": "The familiar modern circular reconstruction needs its kinematic assumptions; this passage does not alone establish a many-body law.",
+      "provenance": "Newton manuscript, Newton Project scholarly transcription.",
+      "status": "selected_text",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn50view3",
+        "turn51view2"
+      ]
+    },
+    {
+      "id": "NT-NEWTON-LIGHT1672",
+      "title": "New Theory about Light and Colors",
+      "url": "https://www.newtonproject.ox.ac.uk/view/texts/normalized/NATP00006",
+      "date": "1672-02-19",
+      "category": "history",
+      "sections": "Printed pp. 3076–3078: prism, aperture/thickness/incidence controls and second-prism experiment.",
+      "readDepth": "Selected primary letter in normalized transcription.",
+      "claim": "Newton varied competing explanations for an elongated spectrum and used a second prism to compare selected rays.",
+      "limits": "Modern stipulated-index Snell diagrams are reconstructions, not measured historical spectra or a complete microscopic theory.",
+      "provenance": "Philosophical Transactions 80; Newton Project transcription.",
+      "status": "selected_text",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn53view0"
+      ]
+    },
+    {
+      "id": "NT-NEWTON-ANALYSIS",
+      "title": "Opticks Book III, Query 31",
+      "url": "https://www.newtonproject.ox.ac.uk/view/texts/normalized/NATP00051",
+      "date": "1718",
+      "category": "history",
+      "sections": "Closing analysis/synthesis discussion, printed pp. 380–382.",
+      "readDepth": "Selected primary published passage.",
+      "claim": "Analysis from observations and synthesis of consequences are presented as revisable methods.",
+      "limits": "Historical authority does not prove a modern hypothesis; queries are questions, not all experimentally established laws.",
+      "provenance": "Newton published text, Newton Project transcription.",
+      "status": "selected_text",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn51view3"
+      ]
+    },
+    {
+      "id": "NT-NEWTON-CHYMISTRY",
+      "title": "Experiments, Portsmouth Add. MS 3973",
+      "url": "https://newton.dlib.indiana.edu/text/ALCH00109/normalized",
+      "date": "1678-12",
+      "category": "history",
+      "sections": "Opening December 1678 entries ff. 1r–1v: weights, residues, appearance and failed mixtures.",
+      "readDepth": "Selected primary notebook transcription; no chemical experiment repeated.",
+      "claim": "Entries preserve measured quantities and unsuccessful combinations within early-modern chymistry.",
+      "limits": "Appearance and historical names do not identify modern composition or prove transmutation; no hazardous recipe is adopted.",
+      "provenance": "The Chymistry of Isaac Newton scholarly edition.",
+      "status": "selected_text",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn58view1",
+        "turn60view1"
+      ]
+    },
+    {
+      "id": "NT-NEWTON-HERMES",
+      "title": "Keynes MS 28: Emerald Tablet translation",
+      "url": "https://newton.dlib.indiana.edu/text/ALCH00017/normalized",
+      "date": null,
+      "category": "history",
+      "sections": "Catalogue and English translation ff. 2r–2v; Latin commentary not translated.",
+      "readDepth": "Selected primary transcription plus editorial metadata.",
+      "claim": "Newton copied/translated an existing Hermetic text employing correspondence and separation imagery.",
+      "limits": "This is not a new Newtonian physical law, a proof of scale equivalence or evidence of every occult practice attributed to him.",
+      "provenance": "Newton manuscript of an older attributed text; Chymistry edition.",
+      "status": "selected_text",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn53view2",
+        "turn55view3"
+      ]
+    },
+    {
+      "id": "NT-NEWTON-PROPHECY",
+      "title": "Yahuda 7.3g/7.3o: Newton’s 2060 chronological notes",
+      "url": "https://www.newtonproject.ox.ac.uk/view/texts/normalized/THEM00437",
+      "date": null,
+      "category": "history",
+      "sections": "Yahuda 7.3g f. 13v normalized text; 7.3o f. 8r diplomatic text; Snobelen’s dating discussion.",
+      "readDepth": "Selected primary scholarly transcriptions directly read; manuscript images not collated.",
+      "claim": "Theological day/year interpretation and selected historical starting dates lead to qualified chronological bounds.",
+      "limits": "Not a mechanics prediction or verified apocalypse date. The diplomatic 7.3o line leaves its upper bound blank; do not silently fill it from a later explanation. Exact dating remains source-specific.",
+      "provenance": "Newton Project primary-text editions; historian commentary used separately.",
+      "status": "selected_text",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn63view0",
+        "turn63view1",
+        "turn55view2"
+      ],
+      "relatedUrls": [
+        "https://www.newtonproject.ox.ac.uk/view/texts/diplomatic/THEM00430",
+        "https://isaac-newton.org/statement-on-the-date-2060/"
+      ]
+    },
+    {
+      "id": "NT-CHYMISTRY-GLOSSARY",
+      "title": "Alchemical Glossary: The Chymistry of Isaac Newton",
+      "url": "https://newton.dlib.indiana.edu/page/glossary",
+      "date": null,
+      "category": "history",
+      "sections": "Selected entries: Luna, Mars, Mercury, Regulus, Saturn, Sol, Sulfur, Venus, Niter, Sal ammoniac, Salt of tartar, Stibium, Vermilion, Vitriol.",
+      "readDepth": "Selected editorial reference entries; read earlier in this session.",
+      "claim": "Planetary and chymical names have contextual literal and disguised uses.",
+      "limits": "Candidate formulas remain hypotheses about a term; no historical specimen was assayed.",
+      "provenance": "Chymistry project scholarly glossary.",
+      "status": "selected_text",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn3view1",
+        "turn9view5"
+      ]
+    },
+    {
+      "id": "TESLA-1892",
+      "title": "Experiments with Alternate Currents of High Potential and High Frequency",
+      "url": "https://www.gutenberg.org/cache/epub/13476/pg13476-images.html",
+      "date": "1892",
+      "category": "electricity",
+      "sections": "Fig. 2 source/condenser/induction-coil chain; Fig. 3 coil, terminal capacity and enclosing metal screen discussion; selected introductory experiments.",
+      "readDepth": "Selected primary lecture transcription; not entire book.",
+      "claim": "The lecture specifies external excitation and notes that the surrounding metal changes capacitive/electromagnetic response and losses.",
+      "limits": "Spectacular discharge and voltage amplification do not establish excess energy. Historical high-voltage/body-contact demonstrations are not the modern protocol.",
+      "provenance": "Tesla lecture; Gutenberg ebook 13476, updated 2024-10-28; matching selected PBS transcript inspected.",
+      "status": "selected_text",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "aliases": [
+        "NT-TESLA-LECTURE1892"
+      ],
+      "webRefs": [
+        "turn57view0",
+        "turn58view4"
+      ],
+      "freezeNote": "R1 cited the supplied skill passage at freeze; direct Gutenberg reading occurred later and does not retroactively alter its contract."
+    },
+    {
+      "id": "NT-TESLA-TRANSMISSION",
+      "title": "US645576A: System of transmission of electrical energy",
+      "url": "https://patents.google.com/patent/US645576A/en",
+      "date": "1900-03-20",
+      "category": "electricity",
+      "sections": "Original description around source G, transmitter/receiver coils and synchronized circuits; claims 1–9.",
+      "readDepth": "Selected original patent text.",
+      "claim": "The claimed system includes a powered transmitting station and a receiving circuit.",
+      "limits": "Patent assertions about efficiency or long-distance propagation are not independent performance data or source-free energy.",
+      "provenance": "Tesla patent hosted by Google Patents.",
+      "status": "patent_claim",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn48view0",
+        "turn50view5"
+      ]
+    },
+    {
+      "id": "NT-TESLA-RADIANT",
+      "title": "US685957A Apparatus for the utilization of radiant energy",
+      "url": "https://patents.google.com/patent/US685957A/en",
+      "date": "1901-11-05",
+      "category": "electricity",
+      "sections": "Selected description of source/plate/condenser/load, Figs. 1–4 descriptions and claims.",
+      "readDepth": "Selected full text read earlier in this session; carried into this standalone source corpus.",
+      "claim": "The claimed arrangement charges a condenser from external radiation and uses a discharge circuit; some described arrangements include an additional electrical source.",
+      "limits": "Does not establish: a source-free energy demonstration or validated historical microscopic radiation model. Performance and conversion efficiency were not independently tested in this review.",
+      "provenance": "Nikola Tesla original patent text, hosted by Google Patents.",
+      "status": "patent_claim",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn30view2",
+        "turn32view3",
+        "turn37view2"
+      ],
+      "version": "US685957A"
+    },
+    {
+      "id": "NT-TAJMAR2024",
+      "title": "In-depth experimental search for a coupling between gravity and electromagnetism with steady fields",
+      "url": "https://arxiv.org/pdf/2402.15640",
+      "date": "2024-04-02",
+      "category": "gravity",
+      "sections": "Selected author PDF §§2.1–2.3, §3 results, §4 conclusion; journal metadata only.",
+      "readDepth": "Selected full text read earlier in this session; carried into this standalone source corpus.",
+      "claim": "Tested steady-field arrangements yielded no identified anomalous force; residual torque depended on shielding, and powered-varistor outgassing complicated inference.",
+      "limits": "Does not establish: a universal exclusion of every gravity-modification model, or sensitivity reproduced by this project. Publisher fetch failed; PMC required a browser challenge. Author PDF was read. Some residuals are upper limits, not exactly zero.",
+      "provenance": "Tajmar, Kößling and Neunzig; primary experimental preprint linked to Scientific Reports 14, 19427.",
+      "status": "selected_text",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn38view0",
+        "turn39view0",
+        "turn39view2",
+        "turn43view2"
+      ],
+      "version": "Author preprint v2; journal DOI 10.1038/s41598-024-70286-w published 2024-08-21"
+    },
+    {
+      "id": "NT-NASA-CAPACITOR2004",
+      "title": "Asymmetrical Capacitors for Propulsion",
+      "url": "https://ntrs.nasa.gov/api/citations/20040171929/downloads/20040171929.pdf",
+      "date": "2004-10",
+      "category": "gravity",
+      "sections": "Selected printed pp. 2–4 background, pp. 7–8 experimental observations, pp. 11–16 model/conclusions.",
+      "readDepth": "Selected full text read earlier in this session; carried into this standalone source corpus.",
+      "claim": "Their observed air thrust was consistent with ion momentum transferred to gas; grounding changed force direction in some geometries.",
+      "limits": "Does not establish: nASA confirmation of antigravity or a universal high-vacuum thrust bound. The rotation apparatus had a finite coarse threshold; an isolated arc event is not sustained vacuum thrust.",
+      "provenance": "Canning, Melcher and Winet; NASA contractor technical report.",
+      "status": "selected_text",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn30view1",
+        "turn32view1",
+        "turn38view1"
+      ],
+      "version": "NASA/CR–2004-213312"
+    },
+    {
+      "id": "NT-BUHLER-PATENT",
+      "title": "US11511891B2 System and method for generating forces using asymmetrical electrostatic pressure",
+      "url": "https://patents.google.com/patent/US11511891B2/en",
+      "date": "2022-11-29",
+      "category": "gravity",
+      "sections": "Selected abstract, federally-sponsored-research statement, mechanism description and claims 1–9.",
+      "readDepth": "Selected full text read earlier in this session; carried into this standalone source corpus.",
+      "claim": "The inventors claim an electrostatic-pressure force and distinguish it from familiar alternatives. The selected record states federally sponsored research is not applicable.",
+      "limits": "Does not establish: independent replication, NASA validation, gravity modification or proof of a closed-system thrust. Selected claims do not replace raw calibrated whole-apparatus data. Legal status is not assessed.",
+      "provenance": "Aurigema and Buhler; inventors’ patent claims, hosted by Google Patents.",
+      "status": "patent_claim",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn29view1",
+        "turn30view3",
+        "turn30view4",
+        "turn37view1"
+      ],
+      "version": "Granted patent US11511891B2"
+    },
+    {
+      "id": "NT-GRAPHITE2024",
+      "title": "Nonlinear dynamics of diamagnetically levitating resonators",
+      "url": "https://link.springer.com/article/10.1007/s11071-024-10018-x",
+      "date": "2024-07-20",
+      "category": "magnetism",
+      "sections": "Selected abstract, introduction and §2.1 experimental methods.",
+      "readDepth": "Selected full text read earlier in this session; carried into this standalone source corpus.",
+      "claim": "A graphite plate above an alternating magnet array is supported by magnetic force against weight; amplitude-dependent stiffness and damping affect its resonances.",
+      "limits": "Does not establish: gravity shielding, source-free propulsion or a reproduced low-cost precision resonator. Exact experiment uses laser/vacuum instrumentation; no raw data analyzed here.",
+      "provenance": "Chen, de Lint, Alijani and Steeneken; primary experimental article.",
+      "status": "selected_text",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn28view1"
+      ],
+      "version": "Nonlinear Dynamics 112, 18807–18816"
+    },
+    {
+      "id": "NT-DMRADIO-CORE2026",
+      "title": "DMRadio-Core: A new approach for GUT-scale axion searches",
+      "url": "https://arxiv.org/html/2604.16602v1",
+      "date": "2026-04-17",
+      "category": "gravity",
+      "sections": "§ II opening/Eq. 1/Fig. 1; § III.1 pickup/slit current path; § IV.1 Fig. 4; advisor additionally inspected Eq. 2.",
+      "readDepth": "Selected primary design-preprint sections; no raw-data replication.",
+      "claim": "Authors propose segmented-solenoid/LC-pickup geometry and project sensitivity with numerical modeling.",
+      "limits": "Proposal is not axion detection. Header v1 date 17 April 2026 differs from body 24 August 2026. Advisor flags Eq. 2 angular/cyclic-frequency notation: do not import without resolving 2π.",
+      "provenance": "Ankel et al. primary experimental-design preprint.",
+      "status": "selected_text",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "version": "arXiv 2604.16602v1; body date 2026-08-24",
+      "webRefs": [
+        "turn50view0",
+        "turn54view0",
+        "turn56view4"
+      ],
+      "additionalReviewer": "advisor checked Eq. 2/date discrepancy"
+    },
+    {
+      "id": "NT-ABRA2021",
+      "title": "The search for low-mass axion dark matter with ABRACADABRA-10cm",
+      "url": "https://arxiv.org/html/2102.06722v1",
+      "date": "2021-02-12",
+      "category": "gravity",
+      "sections": "Main calibration/veto/analysis paragraphs; supplementary§ III Eq. S1 and magnet-on/off flux-noise comparison.",
+      "readDepth": "Selected primary full-text methods/results; full pipeline not reproduced.",
+      "claim": "End-to-end flux calibration and environmental/magnet-off vetoes support a bounded search; this 2021 search found no significant axion evidence.",
+      "limits": "Injected calibration is equivalent only up to geometry; a resonant laboratory peak alone is not an axion. This older search is not a statement about every current result.",
+      "provenance": "Salemi et al. primary search; PRL 127, 081801.",
+      "status": "selected_text",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn56view1",
+        "turn57view1",
+        "turn57view2"
+      ],
+      "accessNotes": "Generic PDF and erroneous v3 HTML failed; version 1 linked from the abstract was accessible."
+    },
+    {
+      "id": "NT-SQUID-NOISE2025",
+      "title": "Noise limits for dc SQUID readout of high-Q resonators below 300 MHz",
+      "url": "https://arxiv.org/html/2504.20398v1",
+      "date": "2025-04-29",
+      "category": "magnetism",
+      "sections": "Abstract; § III matching to resonator, Eqs. 14, 17–21; selected amplifier-chain discussion.",
+      "readDepth": "Selected primary methods; no cryogenic device replicated.",
+      "claim": "Readout matching depends on added inductance, imprecision, backaction and their correlations.",
+      "limits": "Largest output amplitude is not automatically best sensitivity; quantum noise results do not transfer to a toy receiver. Metadata submitted 29 April 2025 but rendered body date 24 August 2026.",
+      "provenance": "Ankel et al. primary noise/readout study.",
+      "status": "selected_text",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "version": "arXiv 2504.20398v1; rendered body 2026-08-24",
+      "webRefs": [
+        "turn55view1",
+        "turn56view3",
+        "turn60view0"
+      ]
+    },
+    {
+      "id": "NT-NASA-BPP2005",
+      "title": "Assessing Potential Propulsion Breakthroughs",
+      "url": "https://ntrs.nasa.gov/api/citations/20060000022/downloads/20060000022.pdf",
+      "date": "2005",
+      "category": "gravity",
+      "sections": "Printed pp. 12–14 Selecting Research Approaches; p. 20 concluding assessment.",
+      "readDepth": "Selected government technical-report sections, not every referenced project.",
+      "claim": "The program’s assessment emphasizes reliable answers to immediate unknowns and distinguishes research maturity from technology readiness.",
+      "limits": "Government study, archival custody or a hypothetical benefit does not demonstrate working propulsion.",
+      "provenance": "Marc Millis, NASA/TM 2005-213998.",
+      "status": "selected_text",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn53view3",
+        "turn54view4",
+        "turn54view5"
+      ]
+    },
+    {
+      "id": "NT-NAVY-PAIS-PATENT",
+      "title": "US10144532B2: Craft using an inertial mass reduction device",
+      "url": "https://patents.google.com/patent/US10144532B2/en",
+      "date": "2018-12-04",
+      "category": "gravity",
+      "sections": "Assignee and publication metadata, selected operational description, claims 1–4.",
+      "readDepth": "Selected original patent text/metadata; no supporting lab dataset reviewed.",
+      "claim": "A Navy-assigned patent proposes a vibrating resonant cavity and polarized-vacuum mechanism.",
+      "limits": "Assignment/grant does not validate inertial-mass reduction or propulsion; legal status and alleged government test success are not assessed.",
+      "provenance": "Salvatore Pais patent; Google Patents transcription.",
+      "status": "patent_claim",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn53view5",
+        "turn54view6",
+        "turn55view4"
+      ]
+    },
+    {
+      "id": "NT-ASTRO-PINNED",
+      "title": "Existing astrology workbench and confluence atlas",
+      "url": "https://occult-kranti.github.io/astrology-sim-ant/pages/workbench.html",
+      "date": null,
+      "category": "history",
+      "sections": "Pinned README; pages/workbench.html and confluence.html; selected app/core and confluence data.",
+      "readDepth": "Local pinned source inspected; live requested web pages failed retrieval.",
+      "claim": "Workbench computes astronomical geometry and traditional rule tables; confluence presents cited influence paths on a disclosed piecewise time scale.",
+      "limits": "Execution of a rule is not predictive validity. Timeline proximity/influence does not validate a physical doctrine. Live rendering was not verified.",
+      "provenance": "User-linked repository at exact commit.",
+      "status": "local_code",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "commit": "3a3ce9953e47a078e659723a52187648f1f08486",
+      "relatedUrls": [
+        "https://occult-kranti.github.io/resonance-research-atlas/projects/astrology-sim-ant/pages/confluence.html"
+      ],
+      "license": "README: educational, non-commercial; no top-level standard LICENSE found.",
+      "linkStatus": "live_not_verified"
+    },
+    {
+      "id": "NT-ASTRO-ENGINE",
+      "title": "Pinned astronomy and house-calculation implementation",
+      "url": "https://github.com/occult-kranti/astrology-sim-ant/blob/3a3ce9953e47a078e659723a52187648f1f08486/assets/js/core/astro.js",
+      "date": null,
+      "category": "history",
+      "sections": "bodyPosition/eclLonOfDate/meanNode/houses; vendored astronomy.js license; headless engine-test harness.",
+      "readDepth": "Selected implementation inspected and existing sanity suite executed.",
+      "claim": "Code uses geocentric vectors rotated to true ecliptic of date; speed is a finite difference; polar Placidus requests fall back to Regiomontanus.",
+      "limits": "Sanity tests do not validate destiny/astrology. The referenced data/ENGINE_VALIDATION.md is absent at this commit; published-reference accuracy claim was not independently verified.",
+      "provenance": "Pinned local code and existing tests.",
+      "status": "local_code",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "commit": "3a3ce9953e47a078e659723a52187648f1f08486",
+      "license": "Vendored Astronomy Engine MIT; wrapper repository rights described separately.",
+      "sha256": "9c767c41add9346a8310d6c1448b045dbeb8d0a7178e686af6a0de23b9e164f8",
+      "testResult": "node scripts/engine-test.mjs: all passed; repository remained clean."
+    },
+    {
+      "id": "NT-NGSPICE",
+      "title": "ngspice release and license documentation",
+      "url": "https://ngspice.sourceforge.io/news.html",
+      "date": "2026-08-11",
+      "category": "electricity",
+      "sections": "Release 47 news entry and developers page license paragraph.",
+      "readDepth": "Maintainer documentation/metadata read earlier this session; package not executed here.",
+      "claim": "Official news lists version 47 on 2026-08-11; developers describe a modified BSD base with exceptions.",
+      "limits": "Does not establish: this environment’s installed version, successful execution or a uniformly BSD dependency bundle. Pin actual installed version and inspect bundled notices if redistributed.",
+      "provenance": "Maintainers’ release and license documentation.",
+      "status": "tool_documentation",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "version": "ngspice 47 release observed; not installed or run",
+      "webRefs": [
+        "turn41view0",
+        "turn41view1"
+      ]
+    },
+    {
+      "id": "NT-FRINGE-LEADS",
+      "title": "The Spacetime Metric research log: electromagnetic/gravity claims",
+      "url": "https://spacetimemetric.com/research-log",
+      "date": "2026-09-08",
+      "category": "history",
+      "sections": "Selected current research-log passages on cavity materials, Pais/Navy, gravity control and Exodus; no linked videos watched.",
+      "readDepth": "Selected advocacy/discourse text; linked videos and alleged classified events not verified.",
+      "claim": "Documents which claims circulate and points to named papers/patents.",
+      "limits": "Does not establish: truth of claimed NASA/Navy effects, performance, classified meetings, orbital-test schedules or videos not read. Its interpretations often extend beyond the primary observable. Funding and custody claims require original records.",
+      "provenance": "Fringe/advocacy compilation of interview and document leads.",
+      "status": "lead",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "relatedLeads": [
+        {
+          "url": "https://www.reddit.com/r/AlternativeHistory/comments/10uy3r5",
+          "depth": "Prior session search excerpt only; full thread and linked claims unverified"
+        }
+      ],
+      "webRefs": [
+        "turn40view0",
+        "turn42view2"
+      ]
+    },
+    {
+      "id": "ATLAS-V4-R3",
+      "title": "Prior atlas V4 electrical-resonance simulation checkpoint",
+      "url": "https://github.com/occult-kranti/resonance-research-atlas/blob/main/research/sound-lab-v4/R3/report.md",
+      "date": "2026-09-27",
+      "category": "electricity",
+      "sections": "Prior report/contract/results local artifact; cited by the new R1 contract.",
+      "readDepth": "Previous team-produced simulation checkpoint, not independent literature or new measurement.",
+      "claim": "Provides inherited bookkeeping context for the new standalone coupled-coil question.",
+      "limits": "Correlated authorship; not independent experimental confirmation. Frozen old repository is not modified.",
+      "provenance": "Prior project artifact.",
+      "status": "prior_artifact",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "localPath": "/workspace/scratch/dffda6468383/resonance-research-atlas/research/sound-lab-v4/R3/report.md",
+      "sha256": "5c4cddf042cd95c2a19b426b5bb8525c9197e3e32080d06a0bc920defd0730c9"
+    },
+    {
+      "id": "NT-PROPULSION-PATENT2026",
+      "title": "US12553420B2: Vehicle propulsion unit and the manner of its operation",
+      "url": "https://patents.google.com/patent/US12553420B2/en",
+      "date": "2026-02-17",
+      "category": "gravity",
+      "sections": "Publication metadata, abstract, concluding movement claim and claims 1–10.",
+      "readDepth": "Selected current original patent; drawings/complete dynamics not independently reconstructed.",
+      "claim": "A newly granted patent describes powered internal moving masses and asserts repeatable displacement.",
+      "limits": "A patent citation chain does not prove momentum violation or a NASA/Navy association. A supported mechanism can exchange momentum with its surroundings; a free-body claim needs the entire center-of-mass budget.",
+      "provenance": "Radoslaw Ordutowski, individual-assignee patent; Google Patents text.",
+      "status": "patent_claim",
+      "accessed": "2026-09-27",
+      "reviewedBy": "sources model agent",
+      "webRefs": [
+        "turn62view2",
+        "turn63view2",
+        "turn63view3",
+        "turn63view4"
+      ]
+    }
+  ],
+  "currentSearch": {
+    "date": "2026-09-27",
+    "method": "Primary/official-targeted engine1 queries plus exact original-record lookup; routine engine2 locator searches.",
+    "queries": [
+      "DMRadio m3 axion dark matter LC resonant search2025 arxiv",
+      "ABRACADABRA2025 axion dark matter resonantLC calibration paper",
+      "site.ntrs.nasa.gov2026 breakthrough propulsion",
+      "site.patents.google.com/patent/2026 inertial mass"
+    ],
+    "limits": "Search engine reformulated some queries and returned irrelevant results. This bounded search is not an exhaustive latest-file census. No current government confirmation of antigravity/free energy was established by the inspected records.",
+    "currentRecords": [
+      "NT-DMRADIO-CORE2026",
+      "NT-PROPULSION-PATENT2026"
+    ],
+    "governmentRecords": [
+      "NT-NASA-CAPACITOR2004",
+      "NT-NASA-BPP2005",
+      "NT-NAVY-PAIS-PATENT"
+    ],
+    "promotionRule": "A lead becomes a source claim only at its actual reading depth; funding, custody, grant and validation remain distinct."
+  }
+}

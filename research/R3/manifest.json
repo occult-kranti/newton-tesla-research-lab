@@ -1,0 +1,92 @@
+{
+  "contract": {
+    "path": "docs/contracts/R3.json",
+    "sha256": "12d23bdce8f7f41a65eebef36540e14551c7986f25106ab496f8b9b974f0526a"
+  },
+  "dependencies": [
+    {
+      "path": "scripts/numerics.py",
+      "sha256": "0fee6e048a0a60fe14f3dae7b74c6f726377f3cc0235b5a39e22fbf09752eba2"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "815360a00e0e1d7a128cade3de11b66d3fe997cbd6e2c69f8081eb9bc8b88197"
+    }
+  ],
+  "files": [
+    {
+      "bytes": 609,
+      "path": "research/R3/aligned-bound-fixture.json",
+      "sha256": "e33f50f7e54ce019f698a759f851f69634275710ddd35d0eadef40f0946cb4ff"
+    },
+    {
+      "bytes": 983,
+      "path": "research/R3/crossleak-path.csv",
+      "sha256": "e5466ea6d0d5f7a2323690be197ee224c576937c83612fc72b2f2e5a0e9b6caf"
+    },
+    {
+      "bytes": 5338,
+      "path": "research/R3/crossleak-path.json",
+      "sha256": "91302593b5534f543dfc361c463d8ab3b1f0f7d036846cbbdadef483183b4d35"
+    },
+    {
+      "bytes": 807,
+      "path": "research/R3/exact-rivals.csv",
+      "sha256": "57ef9a437c8ba63cbcc30fe855abbecbffbb17221ea320e1ae39634a97fd340d"
+    },
+    {
+      "bytes": 1439,
+      "path": "research/R3/exact-rivals.json",
+      "sha256": "ec22edf1dc996fd22e28bb9c7b1e57f669e6cabc13edf4da42852961f412aefb"
+    },
+    {
+      "bytes": 3737,
+      "path": "research/R3/observation-maps.json",
+      "sha256": "293a8ec8edce2c79ab834efc2fac5251a5a56012832f65ff59cc4cfc089eb217"
+    },
+    {
+      "bytes": 439,
+      "path": "research/R3/parameters.json",
+      "sha256": "967e75b78920c74e7cf988aacde7af13f426142d88d3cff53ed7f242dbbb1fa6"
+    },
+    {
+      "bytes": 42733,
+      "path": "research/R3/remaining-identifiability.svg",
+      "sha256": "03f49754981dbf75e7d13d18f54dfe5928df960a1ab377bdb6ffe3766b7d3fc0"
+    },
+    {
+      "bytes": 2626,
+      "path": "research/R3/report.md",
+      "sha256": "c56e1410f517a31a91966ac127605aec76934b76d63c5d3ca5d0370b685f8561"
+    },
+    {
+      "bytes": 11611,
+      "path": "research/R3/result.json",
+      "sha256": "ec63babb80dad020240e3bb19bad19eec46e6a9fef9682757c871b618a39e67e"
+    },
+    {
+      "bytes": 17133,
+      "path": "research/R3/run.py",
+      "sha256": "564d9a86a6eeaa16d126e5813fd165e1db410f962181b90074c42ded9e8c0fa9"
+    },
+    {
+      "bytes": 145613,
+      "path": "research/R3/witness-calibration.svg",
+      "sha256": "e44b6e5e758a3c8c3c4cf9f32c91fb4a74f179bd4a44055399d0ece6d22ce336"
+    },
+    {
+      "bytes": 123746,
+      "path": "research/R3/witness-uncertainty-fixtures.csv",
+      "sha256": "416c8e725feaa9789d0791932bd0a66d42b9c6c355d39b701cf184b66f566c66"
+    }
+  ],
+  "kind": "synthetic-producer-artifacts",
+  "round": "R3",
+  "runtime": {
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "scipy": "1.17.0"
+  },
+  "schemaVersion": 1
+}

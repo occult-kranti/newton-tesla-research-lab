@@ -1,0 +1,75 @@
+{
+  "checks": {
+    "all_manifest_bindings": true,
+    "all_saved_phasor_rows_match_independent_formula": true,
+    "all_three_saved_transients_match_matrix_exponential": true,
+    "coupling_reversal_phase_and_power": true,
+    "critical_coupling_is_excluded_singular_boundary": true,
+    "doubled_winding_resistance_lowers_efficiency": true,
+    "entire_frozen_frequency_grid_passive": true,
+    "gain_above_one_below_unit_efficiency": true,
+    "independent_exact_transient_budget": true,
+    "independent_transient_grid_convergence": true,
+    "nominal_real_power_identity": true,
+    "positive_definite_storage": true,
+    "producer_nominal_claims_match_independent_result": true,
+    "resonant_reflected_resistance_formula": true,
+    "zero_coupling_zero_receiver": true,
+    "zero_source_zero_everything": true
+  },
+  "grid_relative_difference": 2.1748714898938666e-08,
+  "independent_grid": {
+    "efficiency_range": [
+      2.7504248632974702e-05,
+      0.5770577951490168
+    ],
+    "max_relative_power_residual": 3.3622597349697957e-15
+  },
+  "method": "Explicit complex determinant and reflected impedance; capacitor-voltage-state matrix exponential with independent external Simpson quadrature",
+  "nominal": {
+    "efficiency": 0.575447570332481,
+    "gain": 1.3951224971331087,
+    "load_W": 0.04865916955017302,
+    "omega_rad_s": 3162.277660168379,
+    "receiver_current_peak_A": [
+      5.648918902727218e-17,
+      -0.06975612485665543
+    ],
+    "source_W": 0.08455882352941177,
+    "source_current_peak_A": [
+      0.16911764705882354,
+      3.246153826326149e-17
+    ],
+    "winding_W": 0.03589965397923876
+  },
+  "round": "R1",
+  "saved_output_comparison": {
+    "max_current_error_A": 1.415262216750919e-16,
+    "max_power_error_W": 1.1102230246251565e-16,
+    "max_transient_charge_error_C": 1.2038770859108122e-14,
+    "max_transient_current_error_A": 3.4097197287863423e-11,
+    "max_voltage_gain_error": 1.3322676295501878e-15,
+    "phasor_rows": 3205,
+    "transient_files": 3
+  },
+  "transients": [
+    {
+      "load_work_J": 0.011888246904125564,
+      "relative_residual": 3.235957694891287e-08,
+      "residual_J": 6.814588406371322e-10,
+      "samples": 5001,
+      "source_work_J": 0.02105895394470001,
+      "stored_delta_J": 0.00025437636887727666,
+      "winding_heat_J": 0.00891632999023833
+    },
+    {
+      "load_work_J": 0.01188824722640337,
+      "relative_residual": 2.0063255970184472e-09,
+      "residual_J": 4.225111742677673e-11,
+      "samples": 10001,
+      "source_work_J": 0.021058953486694836,
+      "stored_delta_J": 0.00025437636887727666,
+      "winding_heat_J": 0.008916329849163072
+    }
+  ]
+}

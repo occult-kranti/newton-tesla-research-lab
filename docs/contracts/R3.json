@@ -1,0 +1,121 @@
+{
+  "schema": "newton-tesla-contract-v1",
+  "round": "R3",
+  "frozen_at": "2026-09-27T02:52:04.567768+00:00",
+  "title": "A witness channel: subtracting ordinary pickup without inventing a cause",
+  "question": "Can a calibrated environmental witness separate a stipulated receiver-port signal from ordinary pickup, and which transfer/crosstalk assumptions remain necessary?",
+  "incoming_evidence": {
+    "previous_review": "research/reviews/R2-review.json",
+    "verdict": "accepted_narrow",
+    "accepted": "Full calibrated coherent readout localizes effective drives, while restricted readouts and uncalibrated phase admit exact or instrumental rivals.",
+    "selected_objection": "R2B requests an environmental witness with explicit uncertainty, unknown-transfer rivals, singular crosstalk and remaining physical-source identity ambiguity.",
+    "previous_review_sha256": "fe8e495cfd359cd2951b295dc20657c29ec18aa00ea826904a90bcc962d68c28"
+  },
+  "historical_lenses": {
+    "Newton": "Add an observation that changes the inverse map, then identify remaining hidden-cause fibers.",
+    "Tesla": "Include the complete pickup/readout pathway and challenge omitted coupling into the witness."
+  },
+  "source_records": [
+    {
+      "id": "NT-ABRA2021",
+      "url": "https://arxiv.org/html/2102.06722v1",
+      "section": "Calibration and Supplementary III, magnet-off veto, moving/background lines and fringe-field vibration",
+      "reading_status_at_freeze": "Source researcher selected full-text reading; advisor opened source and read report",
+      "relation": "inspires controls and calibration obligations; no borrowed apparatus sensitivity"
+    }
+  ],
+  "classification": "Synthetic effective-voltage observation model, not an axion experiment, physical environmental measurement or new force mechanism.",
+  "state_and_units": {
+    "s": "stipulated signal contribution at receiver port, complex V peak",
+    "b": "environmental witness-equivalent nuisance, complex V peak",
+    "y": "reconstructed receiver effective voltage, complex V peak",
+    "w": "calibrated witness-equivalent voltage, complex V peak; not automatically raw coil voltage",
+    "a": "complex dimensionless nuisance-to-receiver transfer",
+    "beta": "complex dimensionless signal leakage into witness",
+    "epsilon_y,epsilon_w": "supplied deterministic complex measurement-error radii, V",
+    "Delta_a": "supplied complex transfer uncertainty radius, dimensionless"
+  },
+  "parameters": {
+    "signal_amplitude_V": 0.005,
+    "signal_phase_rad": 1.0471975511965976,
+    "background_amplitude_V": 0.02,
+    "background_phase_rad": 0.5235987755982988,
+    "nominal_transfer_a": [
+      0.6,
+      0.2
+    ],
+    "receiver_error_bound_V": 0.002,
+    "witness_error_bound_V": 0.0005,
+    "transfer_error_bound": 0.02,
+    "boundary_phase_points": 8,
+    "crossleak_path_t": [
+      0.0,
+      0.25,
+      0.5,
+      0.9,
+      0.99,
+      1.0,
+      1.01,
+      1.1
+    ]
+  },
+  "model": {
+    "clean_witness": "y=s+a b; w=b. Known a gives linear map [[1,a],[0,1]] over C\u00b2 (four real dimensions) and s=y-a w.",
+    "without_witness": "y only has real rank2, domain4, nullity2 with complex kernel(-a t,t), t in V.",
+    "uncertain_transfer": "a_true=ahat+\u03b4a, |\u03b4a|\u2264Delta_a; yhat=y+\u03b7y, what=b+\u03b7w, |\u03b7y|\u2264epsilon_y, |\u03b7w|\u2264epsilon_w; shat=yhat-ahat what.",
+    "deterministic_disk": "|shat-s| \u2264 epsilon_y+|ahat|epsilon_w+Delta_a(|what|+epsilon_w). Prove triangle inequality and test boundary fixtures; distinguish bound from confidence interval.",
+    "calibration_scope": "The 2mV receiver error bound is a NEW stipulated effective-voltage bound, chosen slightly above the R2 nominal1.932mV scale. It is not derived for all R3 circuit conditions and must be separately calibrated physically. No real sensor performance is asserted.",
+    "unknown_transfer_rival": "If a is unbounded, a'=a+\u03b4a and s'=s-\u03b4a b reproduce both y and w. For the nonzero fixture choose \u03b4a=s/b so s'=0. Domain(s,b,a) is C\u00b3=R\u2076, local real rank4/nullity2; explicit tangent kernel(-b t,0,t), t dimensionless.",
+    "witness_crossleak": "If w=b+beta s with known beta, matrix [[1,a],[beta,1]] has complex determinant1-a beta. Along beta=t/a report inversion/conditioning for t\u22601. At t=1 provide exact kernel(-a u,u), u in V, and withhold unique inversion. Unknown beta is not assumed harmless.",
+    "physical_identity": "Even with a clean known witness, s=s_exotic+d with unmonitored ordinary same-port drive d gives domain(s_exotic,d,b)=C\u00b3=R\u2076, rank4/nullity2 and exact kernel(t,-t,0), t in V. Save finite pair with all5mV assigned to s_exotic versus all to d and identical y,w.",
+    "boundary": "Effective single-frequency linear transfer model only. No stochastic noise/search statistics, geometric axion coupling, electromagnetic field solve, thermal mechanics, gravity law or actual environmental observations."
+  },
+  "controls": [
+    "Clean exact witness recovers injected complex5mV signal",
+    "Zero stipulated signal with background alone subtracts to zero for known exact transfer",
+    "512 boundary cases: eight phases each for receiver error, witness error and transfer error; report inclusion, not probability",
+    "Construct one aligned error fixture attaining the data-dependent bound within tolerance",
+    "Unknown a admits exact zero-signal rival matching BOTH readouts",
+    "Real ranks/domain/nullities and explicit kernels for no witness, clean known witness, unknowna local map, singular crossleak and expanded source-identity map",
+    "Near-singular crossleak path: determinant, rank and condition; singularpoint returns no unique inverse",
+    "Remaining physical-source identity exact rival survives perfect witness subtraction"
+  ],
+  "acceptance": {
+    "exact_reconstruction_absolute_V": 1e-12,
+    "raw_rival_observation_error_V": 1e-12,
+    "kernel_residual": 1e-10,
+    "boundary_disk_exceedance_tolerance_V": 1e-12,
+    "aligned_sharpness_error_V": 1e-12,
+    "expected_real_ranks": {
+      "no_witness": 2,
+      "clean_known_witness": 4,
+      "unknown_transfer_local": 4,
+      "singular_crossleak": 2,
+      "expanded_physical_identity": 4
+    },
+    "expected_real_nullities": {
+      "no_witness": 2,
+      "clean_known_witness": 0,
+      "unknown_transfer_local": 2,
+      "singular_crossleak": 2,
+      "expanded_physical_identity": 2
+    },
+    "positive_control": "Nominal5mV signal disk excludes zero under statedcleanwitness/calibration assumptions; otherwise reportfailurewithoutretuning.",
+    "unknown_transfer_or_identity": "Withhold unconditional exotic-source interval/detection claim."
+  },
+  "artifacts": [
+    "research/R3/result.json",
+    "research/R3/report.md",
+    "research/R3/manifest.json",
+    "CSV uncertainty/crosstalk paths and exact rivals",
+    "Deterministic SVG uncertainty and conditioning plots"
+  ],
+  "falsifier": "Failure of the predicted calibrated subtraction or bound rejects this implementation. An exact ordinary rival blocks an exotic-source interpretation even if a nonzero effective signal remains.",
+  "limits": [
+    "Witness calibration and stationarity must be measured; sensor blindness to the signal is an assumption to test",
+    "Known crosstalk can be inverted only away from its singular boundary",
+    "No real apparatus, dark-matter sensitivity, free-energy extraction or gravity modification is established",
+    "Three authorized rounds end here; future physical tests are roadmap items, not hidden extra loops"
+  ],
+  "next_round_rule": "No further research round is authorized in this program. R3B selects physical calibration and source-discrimination obligations for the roadmap; finalize three rounds/six loops and stop numerical expansion."
+}

@@ -1,0 +1,470 @@
+{
+  "schemaVersion": 1,
+  "rankingBasis": "Ordinal information gain per material/measurement burden; not probabilities, discovery claims or a record of completed experiments.",
+  "categories": [
+    {
+      "id": "electricity",
+      "label": "Electricity and energy"
+    },
+    {
+      "id": "gravity",
+      "label": "Gravity and dark matter"
+    },
+    {
+      "id": "magnetism",
+      "label": "Magnetism"
+    },
+    {
+      "id": "history",
+      "label": "Alchemy, history and prophecy"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "NT-H01",
+      "category": "electricity",
+      "title": "Coupled coils exchange and dissipate supplied energy",
+      "priority": 1,
+      "prediction": "Changing secondary loading changes both receiver output and transmitter response under a passive coupled-circuit model.",
+      "rival": "Apparent excess is an omitted source, stored energy, mutual-energy term or voltage/current phase error.",
+      "observable": "Signed input power; primary/secondary currents; stored-field energy; load and copper loss.",
+      "controls": [
+        "Source-off/zero-state",
+        "Zero coupling",
+        "Known load change",
+        "Independent work integration"
+      ],
+      "materials": [
+        "Python simulation",
+        "Optional current-limited low-voltage two-coil circuit"
+      ],
+      "falsifier": "Energy closure fails outside declared numerical or measurement uncertainty after every term is retained.",
+      "status": "selected_model_question",
+      "sourceIds": [
+        "TESLA-1892",
+        "NT-TESLA-TRANSMISSION",
+        "ATLAS-V4-R3"
+      ],
+      "tags": [
+        "free-energy",
+        "Tesla",
+        "resonance"
+      ],
+      "novelty": "Established model; new project application and adversarial controls, not a new conservation law."
+    },
+    {
+      "id": "NT-H02",
+      "category": "electricity",
+      "title": "Receiver loading can help localize a drive",
+      "priority": 2,
+      "prediction": "Complex responses across deliberately changed loads can distinguish drives at different ports when the transfer columns are independent.",
+      "rival": "Unknown coupling, distributed pickup or gain can reproduce a source-location signature.",
+      "observable": "Amplitude and phase at two ports across loads and frequencies; conditioning of the inference map.",
+      "controls": [
+        "Known injection at each port",
+        "Fit one load and predict another",
+        "Near-degenerate ports",
+        "Unknown gain adversary"
+      ],
+      "materials": [
+        "Synthetic multiport circuit",
+        "Optional low-voltage generator and synchronous readout"
+      ],
+      "falsifier": "A rival drive/gain pair reproduces every selected observable or a held-out load defeats the inferred source.",
+      "status": "proposed_extension",
+      "sourceIds": [
+        "TESLA-1892",
+        "NT-DMRADIO-CORE2026",
+        "NT-ABRA2021"
+      ],
+      "tags": [
+        "free-energy",
+        "identifiability"
+      ],
+      "novelty": "Potentially useful apparatus-specific inference experiment; novelty not established.",
+      "executionBoundary": "The across-load prediction is a future extension. Frozen R2 tests a coherent two-current inversion at one frequency and nominal load, with parameter and phase uncertainty; it does not execute a load scan."
+    },
+    {
+      "id": "NT-H03",
+      "category": "gravity",
+      "title": "A dark-matter-like narrow line needs environmental witnesses",
+      "priority": 3,
+      "prediction": "A specified hypothetical signal response must survive appropriate source-field and environmental-control comparisons with retained sensitivity.",
+      "rival": "Mains harmonics, moving spectral lines, gain drift or magnetic vibration make similar peaks.",
+      "observable": "Calibrated transfer function, line evolution and witness cross-response; no cosmological identification from peak shape alone.",
+      "controls": [
+        "Signal injection",
+        "Source-field-off condition",
+        "Witness signal leakage test",
+        "Held-out nuisance settings"
+      ],
+      "materials": [
+        "Synthetic signal and receiver model"
+      ],
+      "falsifier": "A supposed identifying statistic can be reproduced by an ordinary nuisance or rejects injected signals.",
+      "status": "candidate",
+      "sourceIds": [
+        "NT-ABRA2021",
+        "NT-DMRADIO-CORE2026"
+      ],
+      "tags": [
+        "dark-matter",
+        "magnetic-receiver"
+      ],
+      "novelty": "Control-design exercise; not an axion search or a claim of achieved particle sensitivity."
+    },
+    {
+      "id": "NT-H04",
+      "category": "magnetism",
+      "title": "Readout sensitivity has an optimum that need not maximize signal amplitude",
+      "priority": 4,
+      "prediction": "In a stated noisy receiver model, stronger coupling alters loading and input-referred noise as well as gain.",
+      "rival": "Ranking designs by peak voltage hides backaction, bandwidth loss or added inductance.",
+      "observable": "Signal-to-noise metric and transfer bandwidth under fixed source/noise assumptions.",
+      "controls": [
+        "Uncoupled readout",
+        "Independent noise terms",
+        "Noise correlation counterexample",
+        "Bandwidth-integrated metric"
+      ],
+      "materials": [
+        "Python model"
+      ],
+      "falsifier": "The purported optimum changes when omitted noise/bandwidth is included or fails held-out parameter tests.",
+      "status": "candidate",
+      "sourceIds": [
+        "NT-SQUID-NOISE2025"
+      ],
+      "tags": [
+        "magnetism",
+        "noise"
+      ],
+      "novelty": "Classical analogue only unless quantum/SQUID assumptions are explicitly implemented."
+    },
+    {
+      "id": "NT-H05",
+      "category": "gravity",
+      "title": "A scale signal is not automatically a change in gravity",
+      "priority": 5,
+      "prediction": "Ordinary electromagnetic lift changes a sample support force and produces a reaction elsewhere in the apparatus.",
+      "rival": "Lead forces, susceptibility, electrostatic attraction, heating or source support outside the weighed boundary.",
+      "observable": "Sample and source reaction; field gradient; separately characterized reference.",
+      "controls": [
+        "Whole-system boundary",
+        "Source versus sample displacement",
+        "Matched heating",
+        "Current reversal with even-force rival"
+      ],
+      "materials": [
+        "Simulation",
+        "Later magnet/coil, stand and force/position sensors"
+      ],
+      "falsifier": "The signal follows material/field geometry or cancels with source reaction; remaining unexplained residual does not identify gravity.",
+      "status": "candidate",
+      "sourceIds": [
+        "NT-TAJMAR2024",
+        "NT-GRAPHITE2024",
+        "NT-NASA-CAPACITOR2004"
+      ],
+      "tags": [
+        "antigravity",
+        "force-metrology"
+      ],
+      "novelty": "Known physical alternatives; no bench gravity result."
+    },
+    {
+      "id": "NT-H06",
+      "category": "history",
+      "title": "Prism geometry can distinguish dispersion from a single-index optical model",
+      "priority": 6,
+      "prediction": "With stipulated wavelength-dependent indices, a two-prism ray model predicts different emergent angles for selected spectral rays.",
+      "rival": "Single-index model, aperture extent or geometry misalignment explains an apparent spread.",
+      "observable": "Ray intersection positions and angular separations under declared indices and geometry.",
+      "controls": [
+        "Single-index limit",
+        "Reversed second prism",
+        "Aperture/incident-angle sweep",
+        "Ray geometry check"
+      ],
+      "materials": [
+        "Python ray trace",
+        "Optional prism, diffuse white light and screen"
+      ],
+      "falsifier": "The variable-index model fails its own geometric constraints or a competing calibrated model fits the chosen observations.",
+      "status": "candidate",
+      "sourceIds": [
+        "NT-NEWTON-LIGHT1672",
+        "NT-NEWTON-ANALYSIS"
+      ],
+      "tags": [
+        "Newton",
+        "optics"
+      ],
+      "novelty": "Modern illustrative reconstruction; stipulated colors/indices are not historical measurements."
+    },
+    {
+      "id": "NT-H07",
+      "category": "gravity",
+      "title": "Orbital periods identify force scaling only under stated geometry",
+      "priority": 7,
+      "prediction": "For circular trajectories, T² proportional to r³ implies centripetal acceleration proportional to r^-2.",
+      "rival": "Different orbit geometry, period definition or an unmodeled central distribution changes the inverse interpretation.",
+      "observable": "Period-radius log slope and forward trajectory agreement.",
+      "controls": [
+        "Circular limit",
+        "Perturbed law",
+        "Eccentric-orbit counterexample",
+        "Dimension check"
+      ],
+      "materials": [
+        "Python or algebra only"
+      ],
+      "falsifier": "A claimed general force law cannot reproduce held-out trajectories, or multiple laws remain observationally indistinguishable.",
+      "status": "candidate",
+      "sourceIds": [
+        "NT-NEWTON-MOTION"
+      ],
+      "tags": [
+        "Newton",
+        "physical-prediction",
+        "dark-matter"
+      ],
+      "novelty": "Established reconstruction; no inference of dark matter from a toy orbit."
+    },
+    {
+      "id": "NT-H08",
+      "category": "history",
+      "title": "A chymical name and color do not uniquely identify an element",
+      "priority": 8,
+      "prediction": "Context and independent composition/phase information narrow a set of plausible modern substances more than the symbol alone.",
+      "rival": "Literal universal substitution of every planetary name by one pure element.",
+      "observable": "Candidate-set size and contradictions against source context.",
+      "controls": [
+        "Literal/disguised paired examples",
+        "Compound versus element",
+        "Known mixed-sample counterexample"
+      ],
+      "materials": [
+        "Text collation",
+        "Reference data; no preparation of historical mixtures"
+      ],
+      "falsifier": "A proposed unique identification fails another occurrence or an independent assay; unresolved candidates remain plural.",
+      "status": "historical_analysis",
+      "sourceIds": [
+        "NT-NEWTON-CHYMISTRY",
+        "NT-CHYMISTRY-GLOSSARY"
+      ],
+      "tags": [
+        "alchemy",
+        "Newton"
+      ],
+      "novelty": "Source-bound classification, not transmutation or a measured historical composition."
+    },
+    {
+      "id": "NT-H09",
+      "category": "electricity",
+      "title": "Collected radiant energy must be traced to an external flux or initial storage",
+      "priority": 9,
+      "prediction": "A powered/light-driven charging analogue supplies output only through tracked input and stored energy.",
+      "rival": "Uncounted light, auxiliary supply or charged capacitor is called source-free output.",
+      "observable": "Incident-input proxy, charging history, delivered joules and endpoint storage.",
+      "controls": [
+        "Dark/source-off",
+        "Discharged initial state",
+        "Load change",
+        "Auxiliary source ledger"
+      ],
+      "materials": [
+        "Simulation",
+        "Optional low-voltage photovoltaic/capacitor analogue"
+      ],
+      "falsifier": "Output attributed to a novel source disappears when external/initial energy is counted; an anomaly requires an uncertainty-bounded physical budget.",
+      "status": "candidate",
+      "sourceIds": [
+        "NT-TESLA-RADIANT",
+        "TESLA-1892"
+      ],
+      "tags": [
+        "Tesla",
+        "free-energy"
+      ],
+      "novelty": "Conceptual analogue, not replication of Tesla radiation hardware."
+    },
+    {
+      "id": "NT-H10",
+      "category": "magnetism",
+      "title": "Static diamagnetic lift has a geometric restoring-force signature",
+      "priority": 10,
+      "prediction": "A declared diamagnetic model predicts an equilibrium where magnetic force balances weight and a geometry-dependent local stiffness.",
+      "rival": "Optical parallax, airflow, supports, unmodeled susceptibility anisotropy or finite-magnet geometry.",
+      "observable": "Equilibrium gap, displacement response and stiffness.",
+      "controls": [
+        "Geometry variation",
+        "Optical scale",
+        "Field-gradient limit",
+        "Independent source support"
+      ],
+      "materials": [
+        "Simulation",
+        "Later contained magnets and pre-cut graphite"
+      ],
+      "falsifier": "The model misses held-out equilibria or stability within its declared approximation error.",
+      "status": "candidate",
+      "sourceIds": [
+        "NT-GRAPHITE2024"
+      ],
+      "tags": [
+        "magnetism",
+        "levitation"
+      ],
+      "novelty": "Magnetic support, not gravity shielding; no claim of free mechanical work."
+    },
+    {
+      "id": "NT-H11",
+      "category": "gravity",
+      "title": "Internal moving masses require a complete center-of-mass test",
+      "priority": 11,
+      "prediction": "In an isolated Newtonian model, cyclic internal actuation preserves total momentum; supported devices may move through environmental reactions.",
+      "rival": "Tracking the housing while omitting moving masses, friction, cables or expelled material creates apparent reactionless motion.",
+      "observable": "Center-of-mass trajectory of housing plus every moving mass and source.",
+      "controls": [
+        "No external force",
+        "Add explicit friction",
+        "Complete versus housing-only tracking",
+        "Reverse cycle"
+      ],
+      "materials": [
+        "Multibody simulation"
+      ],
+      "falsifier": "An asserted isolated translation vanishes with the complete boundary, or model momentum fails numerical convergence.",
+      "status": "candidate",
+      "sourceIds": [
+        "NT-PROPULSION-PATENT2026",
+        "NT-NASA-BPP2005"
+      ],
+      "tags": [
+        "antigravity",
+        "current-patent"
+      ],
+      "novelty": "A new patent motivates a standard conservation audit; no hardware performance validated."
+    },
+    {
+      "id": "NT-H12",
+      "category": "gravity",
+      "title": "Asymmetric electrostatic pressure must close the force boundary",
+      "priority": 12,
+      "prediction": "A declared static apparatus model includes all electrodes, source and external boundaries in its force integral.",
+      "rival": "Partial surface integration, chamber attraction, gas momentum or leakage is interpreted as a self-force.",
+      "observable": "Closed/partial stress integral and dependence on boundary placement.",
+      "controls": [
+        "Boundary enlargement",
+        "Return electrode",
+        "Gas nuisance",
+        "Geometry reversal"
+      ],
+      "materials": [
+        "Electrostatic simulation/document study only"
+      ],
+      "falsifier": "The alleged closed-system thrust disappears with omitted surfaces or environmental exchange; a residual alone is not inertial-mass reduction.",
+      "status": "held",
+      "sourceIds": [
+        "NT-BUHLER-PATENT",
+        "NT-NAVY-PAIS-PATENT",
+        "NT-NASA-CAPACITOR2004",
+        "NT-TAJMAR2024"
+      ],
+      "tags": [
+        "antigravity",
+        "patents"
+      ],
+      "novelty": "No independently validated exotic mechanism selected; no high-voltage build."
+    },
+    {
+      "id": "NT-H13",
+      "category": "history",
+      "title": "Newton’s 2060 date depends on an interpretive chronology",
+      "priority": 13,
+      "prediction": "Changing a chosen historical starting date shifts a day/year-derived endpoint by the same amount.",
+      "rival": "A theological bound is presented as a unique successful physical forecast.",
+      "observable": "Explicit starting date, time-unit interpretation and endpoint; manuscript qualification retained.",
+      "controls": [
+        "Alternative start dates",
+        "Separate literal duration from interpretation",
+        "Do not fill illegible/blank text"
+      ],
+      "materials": [
+        "Primary-text collation and arithmetic"
+      ],
+      "falsifier": "The claim of a unique physical prediction fails when its interpretive premises are exposed; theological truth is not adjudicated by a circuit test.",
+      "status": "historical_analysis",
+      "sourceIds": [
+        "NT-NEWTON-PROPHECY"
+      ],
+      "tags": [
+        "prophecy",
+        "Newton",
+        "occult"
+      ],
+      "novelty": "Historical sensitivity analysis; no probability or countdown to an apocalypse."
+    },
+    {
+      "id": "NT-H14",
+      "category": "history",
+      "title": "A Hermetic correspondence becomes physics only after a testable map is specified",
+      "priority": 14,
+      "prediction": "If two models are claimed equivalent, an explicit state/observable map must preserve the declared dynamics within a bounded error.",
+      "rival": "Visual similarity or an above/below metaphor substitutes for units, boundary conditions and an identifying prediction.",
+      "observable": "Mapped trajectories or conserved quantities, plus residual error over a declared domain.",
+      "controls": [
+        "Scale change",
+        "Boundary change",
+        "Counterexample with similar appearance but different dynamics"
+      ],
+      "materials": [
+        "Algebra or two small simulations"
+      ],
+      "falsifier": "A map fails a held-out boundary or cannot be defined; retain the idea as interpretation rather than a physical law.",
+      "status": "historical_analysis",
+      "sourceIds": [
+        "NT-NEWTON-HERMES",
+        "NT-NEWTON-ANALYSIS"
+      ],
+      "tags": [
+        "alchemy",
+        "occult"
+      ],
+      "novelty": "Modern methodological reconstruction, not a theorem attributed to Newton or Hermes."
+    },
+    {
+      "id": "NT-H15",
+      "category": "history",
+      "title": "Astronomical calculation and astrological prediction need separate validation",
+      "priority": 15,
+      "prediction": "A numerical ephemeris can match reference geometry while a separately fixed symbolic rule has no established outcome-prediction score.",
+      "rival": "Correct planet coordinates or consistent rule execution are treated as evidence for destiny/occult causation.",
+      "observable": "Coordinate error separately from a preregistered, blinded predictive score against a base-rate model.",
+      "controls": [
+        "Reference ephemeris",
+        "Timezone/frame audit",
+        "Held-out outcome set",
+        "Label permutation and leakage checks"
+      ],
+      "materials": [
+        "Existing linked workbench",
+        "Optional synthetic scoring demonstration"
+      ],
+      "falsifier": "A claimed predictive improvement fails out-of-sample or disappears after leakage/base-rate controls; a synthetic demonstration supplies no empirical endorsement.",
+      "status": "held",
+      "sourceIds": [
+        "NT-ASTRO-PINNED",
+        "NT-ASTRO-ENGINE"
+      ],
+      "tags": [
+        "astrology",
+        "occult",
+        "tool-audit"
+      ],
+      "novelty": "No human-outcome study performed; existing tools serve historical study and geometry."
+    }
+  ]
+}

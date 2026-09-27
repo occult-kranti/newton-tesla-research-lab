@@ -1,0 +1,120 @@
+{
+  "accepted": [
+    "Under calibrated known impedance and a shared phase reference, two complex currents identify four real effective-drive coordinates. The restricted observation maps have local ranks1/2/2 and nullities3/2/2; explicit finite rival sources reproduce their readouts.",
+    "The nominal5mV receiver-drive injection is enclosed in a deterministic1.9322204465mV error disk and excludes zero only under supplied current/M bounds. All128 saved boundary fixtures are independently reconstructed and included.",
+    "A0.003rad receiver-channel phase skew creates a4.8131708102mV false residual at zero true receiver drive; full phase-calibration premises matter as much as current precision."
+  ],
+  "bindings": {
+    "contract_sha256": "611e3faa6c3550e697e12faa968ff75ec39fa1553572685845882a324bdfbb2d",
+    "independent_results_sha256": "270a8376e8f97f9beb16630b69092f57d0a0845bf76fa3e9f5b997ccedac9b72",
+    "independent_script_sha256": "cada3b7ae61ba3aa1ad3c011ffacedacd7154bd0a8ffbd99c96d991eb76a8b90",
+    "manifest_sha256": "e101c66208e34702cc26a5deb3cff12ee15462e2868bd3c124854743f6399fb5",
+    "result_sha256": "86b799a7291d731543fed45e304c17c45b4ac3b63c2eb5617625486b88e2e9c5"
+  },
+  "checks": [
+    {
+      "id": "all128_saved_fixtures_independently_reconstructed",
+      "passed": true
+    },
+    {
+      "id": "all_128_boundary_disks_contain_truth",
+      "passed": true
+    },
+    {
+      "id": "all_manifest_bindings",
+      "passed": true
+    },
+    {
+      "id": "all_saved_rival_drive_vectors_verified",
+      "passed": true
+    },
+    {
+      "id": "coherent_source_reconstruction",
+      "passed": true
+    },
+    {
+      "id": "expected_local_nullities",
+      "passed": true
+    },
+    {
+      "id": "expected_local_ranks",
+      "passed": true
+    },
+    {
+      "id": "explicit_kernel_bases",
+      "passed": true
+    },
+    {
+      "id": "finite_complex_receiver_rival",
+      "passed": true
+    },
+    {
+      "id": "finite_two_amplitude_rival",
+      "passed": true
+    },
+    {
+      "id": "nominal_disk_excludes_zero",
+      "passed": true
+    },
+    {
+      "id": "phase_skew_exact_artifact",
+      "passed": true
+    },
+    {
+      "id": "producer_nominal_disk_and_ranks_verified",
+      "passed": true
+    },
+    {
+      "id": "real_map_inverse",
+      "passed": true
+    },
+    {
+      "id": "saved_jacobians_and_kernel_bases_verified",
+      "passed": true
+    },
+    {
+      "id": "unknown_calibration_result_withheld",
+      "passed": true
+    },
+    {
+      "id": "zero_phase_zero_residual_nonzero_phase_false_residual",
+      "passed": true
+    },
+    {
+      "id": "zero_squared_amplitude_boundary_rank0",
+      "passed": true
+    }
+  ],
+  "implementation_note": "Producer retained a pre-admission NumPy-bool JSON serialization repair under research/repairs/R2-pre-admission-run1. No scientific rejection or post-review scientific repair occurred.",
+  "independence": "Separate agent and independently derived maps/rivals; shared model family/brief. No producer numerical methods imported.",
+  "limitations": [
+    "Local squared-amplitude kernels apply at the nonzero fixture; the zero-current Jacobian is rank0 and these nonlinear maps are not globally constant.",
+    "Source localization within a circuit is not physical-source identity; no dark-matter coupling, gravity mechanism or free-energy measurement is present.",
+    "Supplied bounded errors are neither empirical calibration nor confidence levels; the128 checks do not estimate statistical coverage.",
+    "Only mutual inductance and current errors are bounded here; unknown additional transfer/phase error causes withholding, not a finite unconditional interval."
+  ],
+  "method": "Explicit complex determinant; real observation derivatives; geometrically constructed null bases and exact finite phase/source rivals; triangle-inequality disk and 128 error-boundary checks",
+  "metrics": {
+    "false_residual_at_3mrad_V": 0.004813170810169697,
+    "nominal_disk_radius_V": 0.001932220446546129,
+    "saved_output_comparison": {
+      "boundary_count": 128,
+      "max_boundary_reconstruction_error": 4.440900568822021e-16,
+      "max_jacobian_error": 6.938893903907228e-18,
+      "max_saved_kernel_error": 5.0483964965469665e-18,
+      "max_saved_rival_current_error_A": 2.7755575615628914e-17
+    }
+  },
+  "next_question": "Can an independently calibrated environmental witness separate an effective receiver residual s from ordinary pickup a*b? Carry the actual R2 voltage-error bound, bound witness/transfer errors, check the exact unknown-transfer rival and a singular witness-crosstalk case. Even if s becomes identifiable, split s into an exotic candidate and an unrestricted ordinary drive and preserve their exact raw-observation degeneracy.",
+  "paths": {
+    "contract": "docs/contracts/R2.json",
+    "independent_results": "research/reviews/R2-independent-checks.json",
+    "independent_script": "research/reviews/check_r2.py",
+    "manifest": "research/R2/manifest.json",
+    "result": "research/R2/result.json"
+  },
+  "reviewed_at": "2026-09-27T02:50:46.722230+00:00",
+  "reviewer": "/root/nt_skeptic",
+  "round": "R2",
+  "verdict": "accepted_narrow"
+}

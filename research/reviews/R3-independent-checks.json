@@ -1,0 +1,117 @@
+{
+  "aligned": {
+    "error_V": 0.002716227766016837,
+    "radius_V": 0.0027162277660168384,
+    "sharpness_error_V": 1.3010426069826053e-18
+  },
+  "boundary_fixtures": {
+    "count": 512,
+    "max_error_minus_radius_V": -3.020444161035878e-05
+  },
+  "checks": {
+    "all512_independent_boundary_fixtures_included": true,
+    "all512_saved_error_fixtures_reconstructed": true,
+    "all_declared_real_nullities": true,
+    "all_declared_real_ranks": true,
+    "all_manifest_bindings": true,
+    "all_saved_maps_and_kernel_bases_verified": true,
+    "clean_witness_recovers_signal": true,
+    "explicit_two_real_dimensional_kernels": true,
+    "independent_aligned_sharpness_fixture": true,
+    "near_singular_inverse_and_conditioning_path": true,
+    "nominal_disk_excludes_zero": true,
+    "ordinary_drive_exact_physical_identity_rival": true,
+    "producer_nominal_disk_verified": true,
+    "saved_aligned_error_is_valid_and_sharp": true,
+    "saved_conditioning_matches_trace_determinant_formula": true,
+    "saved_physical_identity_rival_verifies_both_raw_readouts": true,
+    "saved_unknown_transfer_rival_verifies_both_raw_readouts": true,
+    "singular_crossleak_has_exact_rival": true,
+    "singular_inverse_and_unconditional_exotic_interval_withheld": true,
+    "unknown_transfer_zero_signal_exact_raw_rival": true,
+    "zero_signal_background_subtracts_to_zero": true
+  },
+  "conditioning": [
+    {
+      "condition_2": 1.8633249580710798,
+      "determinant": 1.0,
+      "t": 0.0,
+      "unique_inverse": true
+    },
+    {
+      "condition_2": 3.084088413642841,
+      "determinant": 0.75,
+      "t": 0.25,
+      "unique_inverse": true
+    },
+    {
+      "condition_2": 5.879929946601142,
+      "determinant": 0.5,
+      "t": 0.5,
+      "unique_inverse": true
+    },
+    {
+      "condition_2": 44.22738957669512,
+      "determinant": 0.09999999999999998,
+      "t": 0.9,
+      "unique_inverse": true
+    },
+    {
+      "condition_2": 485.02293824184096,
+      "determinant": 0.010000000000000009,
+      "t": 0.99,
+      "unique_inverse": true
+    },
+    {
+      "condition_2": null,
+      "determinant": 0.0,
+      "t": 1.0,
+      "unique_inverse": false
+    },
+    {
+      "condition_2": 495.02297989176094,
+      "determinant": -0.010000000000000009,
+      "t": 1.01,
+      "unique_inverse": true
+    },
+    {
+      "condition_2": 54.23156055275176,
+      "determinant": -0.10000000000000009,
+      "t": 1.1,
+      "unique_inverse": true
+    }
+  ],
+  "kernel_residuals": {
+    "expanded_physical_identity": 0.0,
+    "no_witness": 0.0,
+    "singular_crossleak": 1.1102230246251565e-16,
+    "unknown_transfer_local": 0.0
+  },
+  "method": "Algebraic minors and explicit complex kernels; independently constructed raw-observation rivals; triangle-inequality proof and512 boundary fixtures; aligned sharpness; closed-form two-by-two conditioning from trace/determinant",
+  "nominal_disk_radius_V": 0.0027262277660168384,
+  "nominal_zero_exclusion_margin_V": 0.0022737722339831617,
+  "nullities": {
+    "clean_known_witness": 0,
+    "expanded_physical_identity": 2,
+    "no_witness": 2,
+    "singular_crossleak": 2,
+    "unknown_transfer_local": 2
+  },
+  "physical_identity_rival_max_raw_error_V": 0.0,
+  "ranks": {
+    "clean_known_witness": 4,
+    "expanded_physical_identity": 4,
+    "no_witness": 2,
+    "singular_crossleak": 2,
+    "unknown_transfer_local": 4
+  },
+  "round": "R3",
+  "saved_output_comparison": {
+    "boundary_count": 512,
+    "max_boundary_reconstruction_error_V": 0.0,
+    "max_condition_relative_error": 1.476687020705519e-14,
+    "max_real_map_error": 0.0,
+    "max_saved_kernel_error": 1.1102230246251565e-16
+  },
+  "unknown_transfer_rival_max_raw_error_V": 1.734723475976807e-18
+}

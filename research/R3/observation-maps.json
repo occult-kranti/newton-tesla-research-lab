@@ -1,0 +1,265 @@
+{
+  "clean_known_witness": {
+    "domain_real_dimension": 4,
+    "kernel_columns": [
+      [],
+      [],
+      [],
+      []
+    ],
+    "kernel_residual": 0.0,
+    "nullity": 0,
+    "rank": 4,
+    "real_matrix": [
+      [
+        1.0,
+        -0.0,
+        0.6,
+        -0.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.2,
+        0.6
+      ],
+      [
+        0.0,
+        -0.0,
+        1.0,
+        -0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "scope": "linear map for stated known coefficients"
+  },
+  "expanded_physical_identity": {
+    "domain_real_dimension": 6,
+    "kernel_columns": [
+      [
+        1.0,
+        -0.0
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        -1.0,
+        -0.0
+      ],
+      [
+        0.0,
+        -1.0
+      ],
+      [
+        0.0,
+        -0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "kernel_residual": 0.0,
+    "nullity": 2,
+    "rank": 4,
+    "real_matrix": [
+      [
+        1.0,
+        -0.0,
+        1.0,
+        -0.0,
+        0.6,
+        -0.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.2,
+        0.6
+      ],
+      [
+        0.0,
+        -0.0,
+        0.0,
+        -0.0,
+        1.0,
+        -0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "scope": "linear map for stated known coefficients"
+  },
+  "no_witness": {
+    "domain_real_dimension": 4,
+    "kernel_columns": [
+      [
+        -0.6,
+        0.2
+      ],
+      [
+        -0.2,
+        -0.6
+      ],
+      [
+        1.0,
+        -0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "kernel_residual": 0.0,
+    "nullity": 2,
+    "rank": 2,
+    "real_matrix": [
+      [
+        1.0,
+        -0.0,
+        0.6,
+        -0.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.2,
+        0.6
+      ]
+    ],
+    "scope": "linear map for stated known coefficients"
+  },
+  "singular_crossleak": {
+    "domain_real_dimension": 4,
+    "kernel_columns": [
+      [
+        -0.6,
+        0.2
+      ],
+      [
+        -0.2,
+        -0.6
+      ],
+      [
+        1.0,
+        -0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "kernel_residual": 1.1102230246251565e-16,
+    "nullity": 2,
+    "rank": 2,
+    "real_matrix": [
+      [
+        1.0,
+        -0.0,
+        0.6,
+        -0.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.2,
+        0.6
+      ],
+      [
+        1.5,
+        0.5000000000000001,
+        1.0,
+        -0.0
+      ],
+      [
+        -0.5000000000000001,
+        1.5,
+        0.0,
+        1.0
+      ]
+    ],
+    "scope": "linear map for stated known coefficients"
+  },
+  "unknown_transfer_local": {
+    "domain_real_dimension": 6,
+    "kernel_columns": [
+      [
+        -0.017320508075688773,
+        0.009999999999999998
+      ],
+      [
+        -0.009999999999999998,
+        -0.017320508075688773
+      ],
+      [
+        0.0,
+        -0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        -0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "kernel_residual": 0.0,
+    "nullity": 2,
+    "rank": 4,
+    "real_matrix": [
+      [
+        1.0,
+        -0.0,
+        0.6,
+        -0.2,
+        0.017320508075688773,
+        -0.009999999999999998
+      ],
+      [
+        0.0,
+        1.0,
+        0.2,
+        0.6,
+        0.009999999999999998,
+        0.017320508075688773
+      ],
+      [
+        0.0,
+        -0.0,
+        1.0,
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "scope": "local Jacobian in (s,b,a) at stipulated fixture"
+  }
+}

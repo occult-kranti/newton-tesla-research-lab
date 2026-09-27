@@ -9,7 +9,7 @@ Validated 27 September 2026 UTC. Scientific admission, byte reproduction, interf
 | Numerical production | Three rounds, 39 producer checks; raw SI CSV, results, reports and plots preserved |
 | Independent review | Three separate narrow verdicts, 55 independently implemented checks; no producer numerical methods imported |
 | Integrator reproduction | All 32 generated producer artifacts regenerated in temporary output directories and matched byte for byte; 45 producer/contract/dependency bindings checked |
-| Interface | Ten model and DOM check groups passed, including calibration withholding, malformed inputs, source filters, setup tabs, missing-data states and local resource/fragment resolution |
+| Interface | Eleven model and DOM check groups passed, including calibration withholding, malformed inputs, source filters, setup tabs, missing-data states and local resource/fragment resolution |
 | Scientific geometry | Ten generated coordinate/drawing artifacts reproduced by the apparatus agent; integrator inspected both corrected 3D views; drawing hashes are checked by the release gate |
 | Source audit | 25 selected source records, 15 hypothesis candidates, exact frozen-contract source references and pinned external-tool provenance |
 | Pre-admission repairs | R2 JSON scalar serialization and R3 syntax repair retained under research/repairs; neither changed a contract or admitted scientific result |
@@ -20,7 +20,7 @@ The final `scripts/verify_release.py` gate requires exactly six admitted loops, 
 
 The accepted scientific views use executable coordinates and equations. One image-generator attempt introduced unsupported mechanical/wiring details and was rejected; its review is preserved separately. It is not the default experiment plate.
 
-Local browser rendering was unavailable. Public desktop inspection is performed after deployment and recorded in `docs/deployment.json` when available. The exposed browser API provides no viewport-resize control; responsive CSS and DOM checks do not amount to rendered mobile-device verification. No mobile screenshot or screen-reader speech test is claimed.
+Local browser rendering was unavailable. The first public desktop pass caught a browser reset-event ordering defect: fields reverted while derived values remained stale. Output refresh now runs after the native reset action; a regression check and repeated live-browser check cover both calculators. Public desktop inspection is performed after deployment and recorded in `docs/deployment.json` when available. The exposed browser API provides no viewport-resize control; responsive CSS and DOM checks do not amount to rendered mobile-device verification. No mobile screenshot or screen-reader speech test is claimed.
 
 The requested historical/astronomical Pages URLs could not be retrieved by the research fetch tool. Their pinned local source and existing sanity suite were inspected; live behavior and independent high-precision ephemeris accuracy were not verified. No whole-site import was made.
 

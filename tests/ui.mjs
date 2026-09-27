@@ -65,6 +65,24 @@ const known = document.getElementById('readout-known'); known.checked = false; k
 assert.match(document.getElementById('readout-results').textContent, /Calibration unknown/);
 known.checked = true; known.dispatchEvent(new window.Event('change', { bubbles: true })); assert.match(document.getElementById('readout-results').textContent, /Zero lies outside/);
 checks.push('Interactive forms remove stale invalid results and correctly switch calibration admission.');
+// Reset is a browser default action: refresh outputs in the next task, after fields reset.
+ratio.value = '1.2'; ratio.dispatchEvent(new window.Event('input', { bubbles: true }));
+const load = document.getElementById('circuit-load'); load.value = '30'; load.dispatchEvent(new window.Event('input', { bubbles: true }));
+const drive = document.getElementById('readout-drive'); drive.value = '0';
+const skew = document.getElementById('readout-phase'); skew.value = '3'; skew.dispatchEvent(new window.Event('input', { bubbles: true }));
+known.checked = false; known.dispatchEvent(new window.Event('change', { bubbles: true }));
+assert.match(document.getElementById('circuit-results').textContent, /0\.583/);
+assert.match(document.getElementById('readout-results').textContent, /Calibration unknown/);
+for (const form of document.querySelectorAll('.input-panel')) form.querySelector('button[type="reset"]').click();
+await new Promise(resolve => setTimeout(resolve, 0));
+assert.equal(ratio.value, '1'); assert.equal(load.value, '20');
+assert.equal(drive.value, '5'); assert.equal(skew.value, '0'); assert.equal(known.checked, true);
+assert.match(document.getElementById('circuit-results').textContent, /1\.395/);
+assert.match(document.getElementById('circuit-results').textContent, /84\.559/);
+assert.match(document.getElementById('readout-results').textContent, /5\.000/);
+assert.match(document.getElementById('readout-results').textContent, /Zero lies outside/);
+checks.push('Both reset buttons restore frozen inputs and recompute the displayed results.');
+
 const sources = await json('data/sources.json');
 assert.equal(document.querySelectorAll('.source-record').length, sources.sources.length);
 const sourceSearch = document.getElementById('source-search'); sourceSearch.value = sources.sources[0].id; sourceSearch.dispatchEvent(new window.Event('input', { bubbles: true })); assert.ok(document.querySelectorAll('.source-record').length >= 1);
